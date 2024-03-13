@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --background: 13.49% 0.019 241.1; #010407 */
+
+@layer base {
+  :root {
+    /* Theme */
+    --background: 0% 0 0; /* #000000 */
+    --foreground: 100% 0 0; /* #FFFFFF */
+    --card: 98.48% 0 0; /* #FAFAFA */
+    --card-foreground:  30.22% 0.025 90.71; /* #332E20 */
+    --popover: 0% 0 0; /* #000000 */
+    --popover-foreground:  100% 0 0; /* #FFFFFF */
+    --primary: 98.48% 0 0; /* #FAFAFA */
+    --primary-foreground: 23% 0.004 106.69; /* #1D1D1B */
+    --secondary: 23% 0.004 106.69; /* #1D1D1B */
+    --secondary-foreground: 98.48% 0 0; /* #FAFAFA */
+    --muted: 27.41% 0.005 286.03; /* #27272A */
+    --muted-foreground: 71.19% 0.013 286.07; /* #A1A1AA */
+    --accent: 49.4% 0.188 27.68; /* #B41919 */
+    --accent-foreground: 0% 0 0; /* #000000 */
+    --destructive: 39.59% 0.133 25.72; /* #7F1D1D */
+    --destructive-foreground: 98.48% 0 0; /* #FAFAFA */
+    --border: 67.01% 0.001 286.36; /* #959596 */
+    --border: 31.91% 0.003 17.31; /* #343232 */
+    --input: 98.48% 0 0; /* #FAFAFA */
+    --ring: 87.09% 0.005 286.29; /* #D4D4D8 */
+    --radius: 1rem;
+    /* Shell */
+    --inner-gutter: 16px;
+    --outer-gutter: 16px;
+    --grid-columns: 6;
+    /* Spacing */
+    --spacing-spacing-1: .25rem;
+    --spacing-spacing-2: .5rem;
+    --spacing-spacing-3: .5rem;
+    --spacing-spacing-4: 1rem;
+    --spacing-spacing-5: 1.5rem;
+    --spacing-spacing-6: 2.25rem;
+    --spacing-spacing-7: 4.5rem;
+    --spacing-spacing-8: 5.25rem;
+    --spacing-spacing-9: 9rem;
+    --spacing-spacing-10: 11.25rem;
+    --spacing-spacing-11: 11.25rem;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+        /* Shell */
+      --inner-gutter: 24px;
+      --outer-gutter: 24px;
+      --grid-columns: 8;
+      /* Spacing */
+      --spacing-spacing-5: 2.25rem;
+      --spacing-spacing-6: 3rem;
+      --spacing-spacing-7: 5.25rem;
+      --spacing-spacing-8: 7rem;
+      --spacing-spacing-9: 10rem;
+      --spacing-spacing-10: 12.5rem;
+      --spacing-spacing-11: 12.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --inner-gutter: 60px;
+      --outer-gutter: 60px;
+      --grid-columns: 12;
+      /* Spacing */
+      --spacing-spacing-3: .75rem;
+      --spacing-spacing-4: 1.5rem;
+      --spacing-spacing-5: 3rem;
+      --spacing-spacing-6: 3.75rem;
+      --spacing-spacing-7: 6rem;
+      --spacing-spacing-8: 9rem;
+      --spacing-spacing-9: 11.25rem;
+      --spacing-spacing-10: 13.75rem;
+      --spacing-spacing-11: 16.5rem;
+    }
+  }
+
+  @media (min-width: 1380px) {
+    :root {
+      --container-sm-width: 1366px;
+    }
+  }
+
+  @media (min-width: 1680px) {
+    :root {
+      --container-width: 1632px;
+    }
+  }
+  /* 93.11% 0.015 90.24; #ECE8DD */
+  .dark {
+    /* Theme */
+    --background: 0% 0 0;  /* #000000 */
+    --foreground: 100% 0 0; /* #FFFFFF */
+    --card: 98.48% 0 0; /* #FAFAFA */
+    --card-foreground:  30.22% 0.025 90.71; /* #332E20 */
+    --popover: 0% 0 0; /* #000000 */
+    --popover-foreground:  100% 0 0; /* #FFFFFF */
+    --primary: 98.48% 0 0; /* #FAFAFA */
+    --primary-foreground: 23% 0.004 106.69; /* #1D1D1B */
+    --secondary: 23% 0.004 106.69; /* #1D1D1B */
+    --secondary-foreground: 98.48% 0 0; /* #FAFAFA */
+    --muted: 0.22% 0.025 90.71; /* #332E20 */
+    --muted-foreground: 71.19% 0.013 286.07; /* #A1A1AA */
+    --accent: 49.4% 0.188 27.68; /* #B41919 */
+    --accent-foreground: 0% 0 0; /* #000000 */
+    --destructive: 39.59% 0.133 25.72; /* #7F1D1D */
+    --destructive-foreground: 98.48% 0 0; /* #FAFAFA */
+    --border: 31.91% 0.003 17.31; /* #343232 */
+    --input: 98.48% 0 0; /* #FAFAFA */
+    --ring: 87.09% 0.005 286.29; /* #D4D4D8 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-1.5 w-1.5 bg-primary/40;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-[1ex];
+  }
+
+  ::-webkit-scrollbar-corner {
+    @apply bg-primary;
+  }
+
+  *::-webkit-media-controls-panel {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+  
+  /* Old shadow dom for play button */
+  *::-webkit-media-controls-play-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+  
+  /* New shadow dom for play button */
+  *::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+}
+
+@layer utilities {
+  /* Typography */
+
+  .f-display-1 {
+    @apply text-5xl sm:text-7xl xl:text-9xl leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em] xl:-tracking-[0.02em] antialiased;
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+  }
+
+  .f-display-2 {
+    @apply text-[2.3rem] sm:text-[3.4375rem] xl:text-[4.5625rem] leading-[1.15] sm:leading-[110%] xl:leading-[100%];
+  }
+
+  .f-display-3 {
+    @apply text-[2rem] sm:text-[2.625rem] xl:text-[3.8rem] leading-[110%] -tracking-[0.01em];
+  }
+
+  .f-heading-1 {
+    @apply text-[1.75rem] sm:text-[2.25rem] xl:text-[3rem] leading-[110%] -tracking-[0.01em] xl:-tracking-[0.02];
+  }
+
+  .f-heading-2 {
+    @apply text-[1.5rem] md:text-[2rem] xl:text-[2.5rem] leading-[130%] sm:leading-[120%] -tracking-[0.01em];
+  }
+
+  .f-heading-3 {
+    @apply text-[1.3125rem] md:text-2xl xl:text-[1.75rem] leading-[130%] tracking-normal sm:-tracking-[0.01em];
+  }
+
+  .f-subhead-1 {
+    @apply text-[1.3125rem] md:text-2xl xl:text-[1.75rem] leading-[130%] sm:leading-[120%] -tracking-[0.01em];
+  }
+
+  .f-subhead-2 {
+    @apply text-[1.2rem] sm:text-[1.25rem] lg:text-2xl leading-[130%] sm:leading-[120%] -tracking-[0.01em];
+  }
+
+  .f-subhead-3 {
+    @apply text-[1rem] xl:text-[1.125rem] leading-[130%] tracking-normal;
+  }
+
+  .f-body-1 {
+    @apply text-[1rem] xl:text-[1.125rem] tracking-normal leading-[130%];
+  }
+
+  /* Container */
+
+  .full-screen {
+    @apply h-[100dvh] min-h-[500xp] lg:min-h-[600px] max-h-[1320px] overflow-hidden;
+  }
+
+  .container-sm {
+    @apply w-[calc(var(--container-sm-width,100%)-(2*var(--outer-gutter,0)))] mx-auto;
+  }
+
+  .container {
+    @apply w-[calc(var(--container-width,100%)-(2*var(--outer-gutter,0)))] mx-auto;
+  }
+
+  .cols-container {
+    @apply flex flex-wrap -ml-gutter [&>[class*=-cols]]:ml-gutter;
+  }
+
+  .full-bleed-container-sm {
+    @apply 3xl:w-[calc(var(--container-sm-width,100%)-var(--outer-gutter,0))] 3xl:mx-auto 3xl:px-4;
+  }
+
+  .full-bleed-container {
+    @apply 3xl:w-[calc(var(--container-width,100%)-var(--outer-gutter,0))] 3xl:mx-auto 3xl:px-gutter;
+  }
+
+  .full-container {
+    @apply w-full px-gutter 2xl:px-16;
+  }
+
+  .fullscreen {
+    @apply w-full h-[100dvh] min-h-[500xp] lg:min-h-[600px] max-h-[1000px];
+  }
+}
+
