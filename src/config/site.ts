@@ -21,7 +21,7 @@ export const domain = 'caballerosolutionspower.com'
 
 export const siteConfig: SiteConfig = {
   name: 'Caballero Solutions Power',
-  description: 'Baja la tensión. Dejanos la alta.',
+  description: 'Baja la tensión. Déjanos la alta.',
   url: `https://${domain}`,
   author,
   mainNav: [
