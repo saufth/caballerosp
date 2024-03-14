@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowTopRightIcon } from '@radix-ui/react-icons'
+import { ArrowTopRightIcon, LightningBoltIcon } from '@radix-ui/react-icons'
 import { Link, type LinkProps } from '@/components/ui/link'
 import { cva } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
@@ -51,7 +51,7 @@ const CallToAction = React.forwardRef<HTMLAnchorElement, CallToActionProps>(
         {...props}
       >
         {contactLink.title}
-        {icon && <ArrowTopRightIcon className={cn(callToActionIconVariants({ variant, size }))} />}
+        {icon && <LightningBoltIcon className={cn('btn-icon', callToActionIconVariants({ variant, size }))} />}
       </Link>
     )
   }
@@ -121,4 +121,10 @@ const CallToPurpose = React.forwardRef<HTMLAnchorElement, CallToActionProps>(
 )
 CallToPurpose.displayName = 'CallToPurpose'
 
-export { CallToAction, CallToAbout, CallToPurpose, CallToServices }
+export {
+  contactLink,
+  CallToAction,
+  CallToAbout,
+  CallToPurpose,
+  CallToServices
+}

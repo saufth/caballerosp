@@ -40,7 +40,7 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
         <source src={src} type='video/mp4' />
       </video>
       <Button
-        className='group absolute bottom-4 xl:bottom-5 left-4 xl:right-5 z-20 bg-black hover:bg-white'
+        className='group absolute bottom-4 xl:bottom-5 left-4 xl:left-auto border xl:right-5 z-20 bg-black hover:bg-white'
         onClick={handleVideo}
       >
         {isPlaying

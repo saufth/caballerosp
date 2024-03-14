@@ -9,14 +9,14 @@
     /* Theme */
     --background: 0% 0 0; /* #000000 */
     --foreground: 100% 0 0; /* #FFFFFF */
-    --card: 98.48% 0 0; /* #FAFAFA */
-    --card-foreground:  30.22% 0.025 90.71; /* #332E20 */
-    --popover: 0% 0 0; /* #000000 */
+    --card: 23% 0.004 106.69; /* #1D1D1B */
+    --card-foreground:  100% 0 0; /* #FFFFFF */
+    --popover: 23% 0.004 106.69; /* #1D1D1B */
     --popover-foreground:  100% 0 0; /* #FFFFFF */
-    --primary: 98.48% 0 0; /* #FAFAFA */
-    --primary-foreground: 23% 0.004 106.69; /* #1D1D1B */
-    --secondary: 23% 0.004 106.69; /* #1D1D1B */
-    --secondary-foreground: 98.48% 0 0; /* #FAFAFA */
+    --primary: 100% 0 0; /* #FFFFFF */
+    --primary-foreground: 0% 0 0; /* #000000 */
+    --secondary: 0% 0 0; /* #000000 */
+    --secondary-foreground: 100% 0 0; /* #FFFFFF */
     --muted: 27.41% 0.005 286.03; /* #27272A */
     --muted-foreground: 71.19% 0.013 286.07; /* #A1A1AA */
     --accent: 49.4% 0.188 27.68; /* #B41919 */

@@ -2,8 +2,8 @@
 import React from 'react'
 import NextLink from 'next/link'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { ArrowRightIcon } from '@radix-ui/react-icons'
-import { CallToAction } from '@/components/call-to-action'
+import { ArrowRightIcon, LightningBoltIcon } from '@radix-ui/react-icons'
+import { contactLink } from '@/components/call-to-action'
 import { Icons } from '@/components/icons'
 import { Link } from '@/components/ui/link'
 import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
@@ -54,12 +54,19 @@ export default function SiteHeader () {
                     ))}
                   </ul>
                   <WhatsappMenu />
-                  <CallToAction
-                    className={cn(
-                      'hidden lg:flex transition-colors divide-neutral-300',
-                      isOnTop && 'bg-black/90 hover:bg-black text-white hover:text-white'
-                    )}
-                  />
+                  <NextLink
+                    href={contactLink.href}
+                    className='group hidden lg:flex gap-x-2 relative p-0.5 bg-black rounded-full h-14 no-underline'
+                  >
+                    <span className='absolute inset-0 overflow-hidden rounded-full'>
+                      <span className='absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(180,25,25,0.6)_0%,rgba(180,25,25,0)_75%)] opacity-70 transition-opacity duration-500 group-hover:opacity-100' />
+                    </span>
+                    <div className='flex items-center gap-x-2 relative z-10 bg-secondary/60 text-secondary-foreground rounded-full px-8'>
+                      {contactLink.title}
+                      <LightningBoltIcon className='[&_*]:fill-secondary-foreground transition-colors duration-300' />
+                    </div>
+                    <span className='absolute -bottom-0 left-[1.125rem] h-0.5 w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-500 group-hover:opacity-50' />
+                  </NextLink>
                 </div>
                 <div className='block lg:hidden'>
                   <div className='block lg:hidden w-8 h-2.5 relative [&>span]:transition-all [&>span]:duration-300' onClick={toggleMenu}>
@@ -104,7 +111,7 @@ export default function SiteHeader () {
           </div>
         </div>
       </div>
-      <div className='w-14 h-14 bg-background/80 backdrop-filter backdrop-saturate-150 backdrop-blur-sm border rounded-full grid place-content-center xl:hidden fixed bottom-gutter right-gutter z-50'>
+      <div className='w-14 h-14 bg-background border rounded-full grid place-content-center xl:hidden fixed bottom-gutter right-gutter z-50'>
         <WhatsappMenu />
       </div>
     </>
