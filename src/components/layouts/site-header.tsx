@@ -49,7 +49,7 @@ export default function SiteHeader () {
                   <ul className='flex items-center gap-x-5 pr-1'>
                     {siteNav.map((navItem, key) => (
                       <li key={key} className='last:hidden'>
-                        <Link href={navItem.href} size='lg'>
+                        <Link href={navItem.href}>
                           {navItem.title}
                         </Link>
                       </li>
