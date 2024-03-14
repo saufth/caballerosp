@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { whatsappEmergencyUrl, whatsappUrl } from '@/config/organization'
 
-export function PhoneToggle () {
+export function WhatsappMenu () {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -18,7 +18,7 @@ export function PhoneToggle () {
           variant='ghost'
           className='group h-10 px-0 lg:px-0 bg-transparent focus-visible:ring-0 hover:bg-transparent ring-0 border-0'
         >
-          <Icons.WhatsappOutlined className='w-6 lg:w-8 h-auto' />
+          <Icons.WhatsappOutlined className='w-8 h-auto' />
           <span className='sr-only'>Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>

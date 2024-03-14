@@ -40,7 +40,7 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
         <source src={src} type='video/mp4' />
       </video>
       <Button
-        className='group absolute bottom-4 xl:bottom-5 right-4 xl:right-5 z-20 bg-black hover:bg-white'
+        className='group absolute bottom-4 xl:bottom-5 left-4 xl:right-5 z-20 bg-black hover:bg-white'
         onClick={handleVideo}
       >
         {isPlaying
@@ -50,7 +50,9 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
               <span className='hidden xl:block xl:text-lg text-white group-hover:text-black'>
                 Reproducir video
               </span>
-              <span className='sr-only xl:hidden'>Reproducir video</span>
+              <span className='block xl:hidden xl:text-lg text-white group-hover:text-black'>
+                Reproducir
+              </span>
             </span>
             )
           : (
@@ -59,7 +61,9 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
               <span className='hidden xl:block xl:text-lg text-white group-hover:text-black'>
                 Pausar video
               </span>
-              <span className='sr-only xl:hidden'>Pausar video</span>
+              <span className='block xl:hidden xl:text-lg text-white group-hover:text-black'>
+                Pausar
+              </span>
             </span>
             )}
       </Button>

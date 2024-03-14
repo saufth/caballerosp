@@ -18,14 +18,14 @@ export default function Hero ({ title, description, videoSrc }: HeroProps) {
           </h1>
           {typeof description === 'string'
             ? (
-              <p className='f-heading-3 text-balance mt-spacing-5 opacity-0 animate-show [animation-delay:400ms]'>
+              <p className='f-heading-3 font-medium text-balance mt-spacing-4 opacity-0 animate-show [animation-delay:400ms]'>
                 {description}
               </p>
               )
             : description && (
-              <div className='mt-spacing-5 space-y-spacing-3 opacity-0 animate-show [animation-delay:400ms]'>
+              <div className='mt-spacing-4 space-y-spacing-3 opacity-0 animate-show [animation-delay:400ms]'>
                 {description.map((paragraph, key) => (
-                  <p key={key} className='f-heading-3 text-balance'>
+                  <p key={key} className='f-heading-3 font-medium text-balance'>
                     {paragraph}
                   </p>
                 ))}

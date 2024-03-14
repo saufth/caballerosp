@@ -6,7 +6,7 @@ import { ArrowRightIcon } from '@radix-ui/react-icons'
 import { CallToAction } from '@/components/call-to-action'
 import { Icons } from '@/components/icons'
 import { Link } from '@/components/ui/link'
-import { PhoneToggle } from '@/components/layouts/phone-toggle'
+import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
 import { cn } from '@/lib/utils'
 import { contactEmail } from '@/config/organization'
 import { siteConfig } from '@/config/site'
@@ -53,7 +53,7 @@ export default function SiteHeader () {
                       </li>
                     ))}
                   </ul>
-                  <PhoneToggle />
+                  <WhatsappMenu />
                   <CallToAction
                     className={cn(
                       'hidden lg:flex transition-colors divide-neutral-300',
@@ -103,6 +103,9 @@ export default function SiteHeader () {
             </Link>
           </div>
         </div>
+      </div>
+      <div className='w-14 h-14 bg-background/80 backdrop-filter backdrop-saturate-150 backdrop-blur-sm border rounded-full grid place-content-center xl:hidden fixed bottom-gutter right-gutter z-50'>
+        <WhatsappMenu />
       </div>
     </>
   )
