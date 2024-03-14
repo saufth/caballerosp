@@ -43,29 +43,31 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
         className='group absolute bottom-4 xl:bottom-5 left-4 xl:left-auto border xl:right-5 z-20 bg-black hover:bg-white'
         onClick={handleVideo}
       >
-        {isPlaying
-          ? (
-            <span className='flex items-center gap-x-3'>
-              <PlayIcon className='fill-white w-4 xl:w-4 h-auto group-hover:[&_*]:fill-black' />
-              <span className='hidden xl:block xl:text-lg text-white group-hover:text-black'>
-                Reproducir video
-              </span>
-              <span className='block xl:hidden xl:text-lg text-white group-hover:text-black'>
-                Reproducir
-              </span>
-            </span>
-            )
-          : (
-            <span className='flex items-center gap-x-3'>
-              <PauseIcon className='fill-white w-4 xl:w-4 h-auto group-hover:[&_*]:fill-black' />
-              <span className='hidden xl:block xl:text-lg text-white group-hover:text-black'>
-                Pausar video
-              </span>
-              <span className='block xl:hidden xl:text-lg text-white group-hover:text-black'>
-                Pausar
-              </span>
-            </span>
-            )}
+        <span className='flex items-center gap-x-3'>
+          {isPlaying
+            ? (
+              <>
+                <PlayIcon className='fill-white w-4 xl:w-4 h-auto group-hover:[&_*]:fill-black' />
+                <span className='hidden xl:block xl:text-lg text-white group-hover:text-black'>
+                  Reproducir video
+                </span>
+                <span className='block xl:hidden xl:text-lg text-white group-hover:text-black'>
+                  Reproducir
+                </span>
+              </>
+              )
+            : (
+              <>
+                <PauseIcon className='fill-white w-4 xl:w-4 h-auto group-hover:[&_*]:fill-black' />
+                <span className='hidden xl:block xl:text-lg text-white group-hover:text-black'>
+                  Pausar video
+                </span>
+                <span className='block xl:hidden xl:text-lg text-white group-hover:text-black'>
+                  Pausar
+                </span>
+              </>
+              )}
+        </span>
       </Button>
       <div className='absolute inset-0 bg-black/40 z-10' />
     </div>

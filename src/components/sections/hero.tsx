@@ -1,8 +1,9 @@
 import React from 'react'
+import NextLink from '@/components/ui/next-link'
 import BackgroundVideo from '@/components/background-video'
-import { Link } from '@/components/ui/link'
+import { Button } from '@/components/ui/button'
+import { LightningBoltIcon } from '@radix-ui/react-icons'
 import { type HeadingWithOptionalDescription } from '@/types'
-import { ArrowRightIcon } from '@radix-ui/react-icons'
 
 interface HeroProps extends HeadingWithOptionalDescription {
   videoSrc?: string
@@ -31,20 +32,22 @@ export default function Hero ({ title, description, videoSrc }: HeroProps) {
                 ))}
               </div>
             )}
-          <Link
-            href='/#soluciones'
+          <Button
+            asChild
             size='lg'
             variant='default'
-            className='group bg-white mt-spacing-6 h-16 lg:h-20 lg:text-lg flex gap-x-20 overflow-hidden opacity-0 animate-show [animation-delay:500ms]'
+            className='group bg-white h-16 lg:h-20 mt-spacing-6 overflow-hidden opacity-0 animate-show [animation-delay:500ms]'
           >
-            <span className='z-30 text-primary-foreground group-hover:text-foreground transition-colors duration-300'>
-              Soluciones
-            </span>
-            <div className='w-10 h-10 rounded-full grid place-content-center relative z-20'>
-              <ArrowRightIcon className='w-4 h-4 lg:w-5 lg:h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-2' />
-              <div className='w-full h-full bg-accent rounded-full absolute inset-0 -z-10 m-auto transition-transform duration-300 group-hover:scale-[16]' />
-            </div>
-          </Link>
+            <NextLink className='flex gap-x-spacing-7' href='/#soluciones'>
+              <span className='z-30 text-lg text-primary-foreground group-hover:text-foreground transition-colors duration-300'>
+                Soluciones
+              </span>
+              <div className='w-10 h-10 rounded-full grid place-content-center relative z-20'>
+                <LightningBoltIcon className='w-4 h-4 lg:w-5 lg:h-5 relative z-10 transition-transform duration-300 group-hover:scale-150' />
+                <div className='w-full h-full bg-accent rounded-full absolute inset-0 -z-10 m-auto transition-transform duration-300 group-hover:scale-[16]' />
+              </div>
+            </NextLink>
+          </Button>
         </div>
       </div>
       {videoSrc && (<BackgroundVideo src={videoSrc} />)}
