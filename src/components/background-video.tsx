@@ -40,18 +40,18 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
         <source src={src} type='video/mp4' />
       </video>
       <Button
-        className='group absolute bottom-4 xl:bottom-5 left-4 xl:left-auto border xl:right-5 z-20 bg-black hover:bg-white'
+        className='group absolute bottom-4 lg:bottom-5 left-4 lg:left-auto border lg:right-5 z-20 bg-black hover:bg-white'
         onClick={handleVideo}
       >
-        <span className='flex items-center gap-x-3'>
+        <span className='flex items-center gap-x-3 xl:text-lg text-white group-hover:text-black'>
           {isPlaying
             ? (
               <>
                 <PlayIcon className='fill-white w-4 xl:w-4 h-auto group-hover:[&_*]:fill-black' />
-                <span className='hidden xl:block xl:text-lg text-white group-hover:text-black'>
+                <span className='hidden xl:block'>
                   Reproducir video
                 </span>
-                <span className='block xl:hidden xl:text-lg text-white group-hover:text-black'>
+                <span className='block xl:hidden'>
                   Reproducir
                 </span>
               </>
@@ -59,10 +59,10 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
             : (
               <>
                 <PauseIcon className='fill-white w-4 xl:w-4 h-auto group-hover:[&_*]:fill-black' />
-                <span className='hidden xl:block xl:text-lg text-white group-hover:text-black'>
+                <span className='hidden xl:block'>
                   Pausar video
                 </span>
-                <span className='block xl:hidden xl:text-lg text-white group-hover:text-black'>
+                <span className='block xl:hidden'>
                   Pausar
                 </span>
               </>

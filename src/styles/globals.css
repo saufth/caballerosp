@@ -155,17 +155,15 @@
   /* Typography */
 
   .f-display-1 {
-    @apply text-5xl sm:text-7xl xl:text-9xl leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em] xl:-tracking-[0.02em] antialiased;
-    -webkit-font-feature-settings: "liga";
-    font-feature-settings: "liga";
+    @apply text-5xl sm:text-7xl xl:text-9xl leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em] xl:-tracking-[0.02em];
   }
 
   .f-display-2 {
-    @apply text-[2.3rem] sm:text-[3.4375rem] xl:text-[4.5625rem] leading-[120%] sm:leading-[120%] xl:leading-[110%];
+    @apply text-[2.3rem] sm:text-[3.4375rem] xl:text-[4.5625rem] leading-[120%] -tracking-[0.01em] xl:-tracking-[0.02em];
   }
 
   .f-display-3 {
-    @apply text-[2rem] sm:text-[2.625rem] xl:text-[3.8rem] leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em];
+    @apply text-[2rem] sm:text-[2.625rem] xl:text-[3.8rem] leading-[120%] sm:leading-[120%] -tracking-[0.01em] xl:-tracking-[0.02em];
   }
 
   .f-heading-1 {
@@ -173,7 +171,7 @@
   }
 
   .f-heading-2 {
-    @apply text-[1.5rem] md:text-[2rem] xl:text-[2.5rem] leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em];
+    @apply text-[1.5rem] md:text-[2rem] xl:text-[2.5rem] leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em] xl:-tracking-[0.02em];
   }
 
   .f-heading-3 {

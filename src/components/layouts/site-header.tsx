@@ -109,7 +109,7 @@ export default function SiteHeader () {
           </div>
         </div>
       </div>
-      <div className='w-14 h-14 bg-background border rounded-full grid place-content-center xl:hidden fixed bottom-gutter right-gutter z-50'>
+      <div className='w-14 h-14 bg-background border rounded-full grid place-content-center lg:hidden fixed bottom-gutter right-gutter z-50'>
         <WhatsappMenu />
       </div>
     </>
