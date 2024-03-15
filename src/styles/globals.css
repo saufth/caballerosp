@@ -64,8 +64,6 @@
 
   @media (min-width: 1024px) {
     :root {
-      --inner-gutter: 60px;
-      --outer-gutter: 60px;
       --grid-columns: 12;
       /* Spacing */
       --spacing-spacing-3: .75rem;
@@ -77,6 +75,13 @@
       --spacing-spacing-9: 11.25rem;
       --spacing-spacing-10: 13.75rem;
       --spacing-spacing-11: 16.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    :root {
+      --outer-gutter: 60px;
+      --container-sm-width: 1260px;
     }
   }
 
@@ -191,7 +196,7 @@
   }
 
   .f-body-1 {
-    @apply text-[1rem] xl:text-[1.125rem] leading-[120%] sm:leading-[120%] xl:leading-[110%] tracking-normal;
+    @apply text-[1rem] xl:text-[1.125rem] leading-[120%] sm:leading-[120%] xl:leading-[120%] tracking-normal;
   }
 
   /* Container */
@@ -224,7 +229,7 @@
     @apply w-full px-gutter 2xl:px-16;
   }
 
-  .fullscreen {
+  .screen-container {
     @apply w-full h-[100dvh] min-h-[500xp] lg:min-h-[600px] max-h-[1000px];
   }
 }

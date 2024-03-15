@@ -22,39 +22,8 @@ export const location = 'Adolfo Lopez Mateo #30 Int.53 San Pablo 76125, Queréta
 
 export const services: Category[] = [
   {
-    title: 'Diseño e ingeniería eléctrica',
-    description: 'Proyectos efecientes y seguros para un óptimo arranque y operación de sistemas eléctricos',
-    slug: '/diseno-ingenieria-electrica',
-    items: [
-      {
-        title: 'Cuadro de carga',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
-      },
-      {
-        title: 'Diagrama unifilar',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
-      },
-      {
-        title: 'Diseño de instalaciones',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
-      },
-      {
-        title: 'Gestoría y tramitología',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
-      },
-      {
-        title: 'Lay-Out de instalación',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
-      },
-      {
-        title: 'Memoria de cálculo',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
-      }
-    ]
-  },
-  {
     title: 'Instalaciones eléctricas',
-    description: 'Instalaciones eficientes y de alta calidad para garantizar el optimo abastecimiento de energía eléctrica',
+    description: 'Instalaciones eficientes y de alta calidad. Aseguramos un abastecimiento óptimo de energía eléctrica.',
     slug: '/instalaciones-electricas',
     items: [
       {
@@ -81,7 +50,7 @@ export const services: Category[] = [
   },
   {
     title: 'Mantenimiento eléctrico',
-    description: 'Mantenimiento preventivo, correctivo y predictivo para garantizar la operación segura y eficiente de sistemas eléctricos',
+    description: 'Preventivo, correctivo y predictivo. Garantizamos el funcionamiento óptimo de tu infraestructura eléctrica.',
     slug: '/mantenimiento-electrico',
     items: [
       {
@@ -185,16 +154,47 @@ export const services: Category[] = [
     ]
   },
   {
-    title: 'Reingeniería de sistemas eléctricos',
-    description: 'Optimización de sistemas eléctricos para mejorar su eficiencia y seguridad',
-    slug: '/reingenieria-sistemas-electricos',
+    title: 'Diseño e ingeniería eléctrica',
+    description: 'Desarrollamos proyectos efecientes y seguros. Te ayudamos a construir el sistema adecuado para tu infraestructura.',
+    slug: '/diseno-ingenieria-electrica',
     items: [
       {
-        title: 'Actualización de equipos eléctricos',
+        title: 'Cuadro de carga',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
+      },
+      {
+        title: 'Diagrama unifilar',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
+      },
+      {
+        title: 'Diseño de instalaciones',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
+      },
+      {
+        title: 'Gestoría y tramitología',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
+      },
+      {
+        title: 'Lay-Out de instalación',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
+      },
+      {
+        title: 'Memoria de cálculo',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
       }
     ]
   }
+  // {
+  //   title: 'Reingeniería de sistemas eléctricos',
+  //   description: 'Optimizamos sistemas eléctricos. Mejoramos la eficiencia y seguridad de tu infraestructura eléctrica.',
+  //   slug: '/reingenieria-sistemas-electricos',
+  //   items: [
+  //     {
+  //       title: 'Actualización de equipos eléctricos',
+  //       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
+  //     }
+  //   ]
+  // }
 ]
 
 export const experience: Article = {
