@@ -11,7 +11,7 @@ interface HeroProps extends HeadingWithOptionalDescription {
 
 export default function Hero ({ title, description, videoSrc }: HeroProps) {
   return (
-    <section className='screen-container -mt-[80px] lg:-mt-[102px] relative overflow-hidden'>
+    <section className='screen-container -mt-[79px] lg:-mt-[102.5px] relative overflow-hidden'>
       <div className='container relative z-10 pt-28'>
         <div className='max-w-[340px] sm:max-w-xl xl:max-w-5xl'>
           <h1 className='f-display-1 text-balance opacity-0 animate-show [animation-delay:300ms]'>
