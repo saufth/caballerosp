@@ -44,10 +44,10 @@ export default function IndexPage () {
                 as='article'
                 className='group w-8-cols lg:w-4-cols bg-black rounded-3xl relative p-0.5'
               >
-                <span className='h-8 absolute inset-x-0 top-0 overflow-hidden rounded-full'>
+                <span className='h-4 absolute inset-x-0 top-0 overflow-hidden rounded-full'>
                   <span className='absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(180,25,25,0.6)_0%,rgba(180,25,25,0)_75%)] opacity-60 transition-opacity duration-500 group-hover:opacity-100' />
                 </span>
-                <div className='w-full h-full relative z-10 bg-black/50 group-hover:bg-black/40 rounded-3xl p-gutter transition-colors duration-300'>
+                <div className='w-full h-full relative z-10 bg-black/60 group-hover:bg-black/50 rounded-3xl p-gutter transition-colors duration-300'>
                   <CardContent className='grid place-content-center py-20'>
                     <Icons.Logomark className='w-auto h-36' />
                   </CardContent>
