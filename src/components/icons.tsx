@@ -189,7 +189,7 @@ export const Icons = {
         viewBox='0 0 512 512'
         {...props}
       >
-        <title>{siteConfig.name} - Instalaciones</title>
+        <title>{`${siteConfig.name} - Instalaciones`}</title>
         <path d='M184.7,234.1l48.6-50l18.3,17.8l-48.6,50L184.7,234.1z' />
         <path d='M262.4,311.1l48.6-49.8l18.3,17.9L280.8,329L262.4,311.1z' />
         <path
@@ -226,7 +226,7 @@ export const Icons = {
         viewBox='0 0 512 495.2'
         {...props}
       >
-        <title>{siteConfig.name} - Mantenimiento</title>
+        <title>{`${siteConfig.name} - Mantenimiento`}</title>
         <path
           d='M470.7,98l33.7-58.1c2.1-3.5,2.1-7.9,0-11.5s-5.9-5.8-10-5.9l-300.7-2.7h-0.1
           c-0.2,0-0.5,0-0.7,0c-4.2-8.2-12.9-14-22.9-14c-14.2,0-25.7,11.5-25.7,25.7s11.5,25.7,25.7,25.7c10,0,18.7-5.8,22.9-14.2
@@ -254,7 +254,7 @@ export const Icons = {
         viewBox='0 0 512 543.8'
         {...props}
       >
-        <title>{siteConfig.name} - Diseño e ingenieria</title>
+        <title>{`${siteConfig.name} - Diseño e ingenieria`}</title>
         <path
           d='M135.2,22.4c5.6,0,10.7,3.3,12.8,8.5l2.7,6.2l-3.4,6c-2.5,4.4-7.1,7.1-12.2,7.1c-7.7,0-13.9-6.2-13.9-13.9
           S127.5,22.4,135.2,22.4 M70.4,95.9c5.4,0,10.4,3.2,12.7,8.1l2.8,6.1l-3.1,6c-2.4,4.7-7.2,7.6-12.4,7.6c-7.7,0-13.9-6.2-13.9-13.9

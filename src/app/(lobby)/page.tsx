@@ -4,6 +4,8 @@ import { siteConfig } from '@/config/site'
 import { services } from '@/config/organization'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Icons } from '@/components/icons'
+import { LightningBoltIcon } from '@radix-ui/react-icons'
+import { CallToAction } from '@/components/call-to-action'
 
 const serviceIconStyle = 'w-auto h-48 xl:h-64 mx-auto fill-transparent stroke-accent stroke-[4px]'
 
@@ -65,9 +67,17 @@ export default function IndexPage () {
                       <h3 className='f-heading-3'>
                         {item.title}
                       </h3>
-                      <p className='f-body-1 text-muted-foreground text-balance'>
+                      <p className='f-body-1 text-muted-foreground text-balance mt-spacing-3'>
                         {item.description}
                       </p>
+                      {item.slug && (
+                        <div className='mt-spacing-5'>
+                          <CallToAction href={item.slug} variant='secondary' contentClassName='flex gap-x-2 items-center'>
+                            Saber mas
+                            <LightningBoltIcon className='w-auto h-3.5' />
+                          </CallToAction>
+                        </div>
+                      )}
                     </CardHeader>
                   </div>
                   <span className='absolute -bottom-0 left-[1.125rem] h-0.5 w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-500 group-hover:opacity-60' />
