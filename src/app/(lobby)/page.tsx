@@ -58,15 +58,15 @@ export default function IndexPage () {
                 <Card
                   key={key}
                   as='article'
-                  className='group w-8-cols bg-card/50 lg:w-4-cols rounded-3xl relative xxs:py-0.5 xxs:px-0'
+                  className='group w-8-cols bg-card/50 hover:bg-card/70 lg:w-4-cols rounded-3xl relative xxs:py-px xxs:px-0'
                 >
-                  <span className='h-5 group-hover:h-8 absolute inset-x-0 top-0 overflow-hidden rounded-full transition-[height] duration-300'>
+                  <span className='h-2 absolute inset-x-0 top-0 overflow-hidden rounded-full transition-[height] duration-300'>
                     <span className='absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(180,25,25,0.6)_0%,rgba(180,25,25,0)_75%)] opacity-50 transition-opacity duration-300 group-hover:opacity-100' />
                   </span>
-                  <div className='w-full h-full relative z-10 bg-card/20 group-hover:bg-card/60 rounded-3xl p-gutter transition-colors duration-300'>
+                  <div className='w-full h-full relative z-10 bg-card/20 group-hover:bg-card/10 rounded-3xl p-gutter transition-colors duration-300'>
                     <CardContent className='pt-spacing-5 pb-spacing-6 relative'>
                       {ServiceIcon ? <ServiceIcon className='w-auto h-48 mx-auto fill-transparent stroke-accent stroke-[4px] relative' /> : <Icons.ImageOff className='w-auto h-48 mx-auto fill-accent' />}
-                      {ServiceIcon && <ServiceIcon className='w-auto h-48 fill-transparent stroke-accent stroke-[4px] absolute inset-0 m-auto scale-110 blur' />}
+                      {ServiceIcon && <ServiceIcon className='w-auto h-48 fill-transparent stroke-accent stroke-[4px] absolute inset-0 m-auto scale-110 blur group-hover:scale-[1.15] duration-300 transition-transform' />}
                     </CardContent>
                     <CardHeader>
                       <h3 className='f-heading-3'>
@@ -85,7 +85,7 @@ export default function IndexPage () {
                       )}
                     </CardHeader>
                   </div>
-                  <span className='absolute -bottom-0 left-[1.125rem] h-0.5 w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-300 group-hover:opacity-60' />
+                  <span className='absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-300 group-hover:opacity-60' />
                 </Card>
               )
             })}
