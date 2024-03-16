@@ -64,7 +64,7 @@ export default function IndexPage () {
                     <span className='absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(180,25,25,0.6)_0%,rgba(180,25,25,0)_75%)] opacity-50 transition-opacity duration-300 group-hover:opacity-100' />
                   </span>
                   <div className='w-full h-full relative z-10 bg-card/20 group-hover:bg-card/10 rounded-3xl p-gutter transition-colors duration-300'>
-                    <CardContent className='pt-spacing-5 pb-spacing-6 relative'>
+                    <CardContent className='pt-spacing-5 pb-spacing-7 relative'>
                       {ServiceIcon ? <ServiceIcon className='w-auto h-48 mx-auto fill-transparent stroke-accent stroke-[4px] relative' /> : <Icons.ImageOff className='w-auto h-48 mx-auto fill-accent' />}
                       {ServiceIcon && <ServiceIcon className='w-auto h-48 fill-transparent stroke-accent stroke-[4px] absolute inset-0 m-auto scale-110 blur group-hover:scale-[1.15] duration-300 transition-transform' />}
                     </CardContent>
