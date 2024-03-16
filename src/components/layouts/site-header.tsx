@@ -33,7 +33,10 @@ export default function SiteHeader () {
           (isOnTop || isMenuOpen) && 'bg-transparent border-transparent backdrop-filter-none'
         )}
       >
-        <nav className='relative border-t-4 lg:border-t-[6px] border-accent' aria-label={`${siteConfig.name} directory`}>
+        <nav
+          className={cn('relative border-t-4 border-accent transition-[border]', !isOnTop && 'border-t-0')}
+          aria-label={`${siteConfig.name} directory`}
+        >
           <div className='container'>
             <div
               className='w-full h-[74px] lg:h-24 flex justify-between items-center'

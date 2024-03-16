@@ -14,10 +14,10 @@ const callToActionVariants = cva(
         ghost: 'bg-primary/50'
       },
       size: {
-        default: 'h-8 lg:h-9',
-        xs: 'h-6 lg:h-7',
-        sm: 'h-7 lg:h-8',
-        lg: 'h-11 lg:h-14',
+        default: 'h-8 md:h-9',
+        xs: 'h-6 md:h-7',
+        sm: 'h-7 md:h-8',
+        lg: 'h-11 md:h-14',
         icon: 'h-7 lg:h-[33px] w-7 lg:w-[33px]'
       }
     },

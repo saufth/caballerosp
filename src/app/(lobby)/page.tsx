@@ -7,12 +7,12 @@ import { Icons } from '@/components/icons'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
 import { CallToAction } from '@/components/call-to-action'
 
-const serviceIconStyle = 'w-auto h-48 xl:h-64 mx-auto fill-transparent stroke-accent stroke-[4px]'
+interface ClassName { className?: string }
 
 const servicesIcons = [
-  () => <Icons.Instalations className={serviceIconStyle} />,
-  () => <Icons.Maintenance className={serviceIconStyle} />,
-  () => <Icons.DesignEngineering className={serviceIconStyle} />
+  ({ className }: ClassName) => <Icons.Instalations className={className} />,
+  ({ className }: ClassName) => <Icons.Maintenance className={className} />,
+  ({ className }: ClassName) => <Icons.DesignEngineering className={className} />
 ]
 
 export default function IndexPage () {
@@ -23,8 +23,9 @@ export default function IndexPage () {
         description='Desde instalaciones en baja tensión hasta proyectos en alta tensión, nuestro equipo altamente capacitado y comprometido se encarga de cada detalle.'
         videoSrc='/video/home-hero.mp4'
       />
-      <section id='soluciones' className='pt-spacing-7'>
-        <div className='container'>
+      <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
+        <div className='absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
+        <div className='container pt-spacing-7 relative'>
           <div className='cols-container'>
             <div className='w-8-cols lg:w-7-cols'>
               <h2 className='f-subhead-2 font-medium text-muted-foreground'>
@@ -36,32 +37,36 @@ export default function IndexPage () {
               </p>
             </div>
             <div className='w-8-cols lg:w-5-cols mt-spacing-5 lg:mt-0'>
-              <Image
-                src='/images/home-solutions.webp'
-                alt='Trabajadores dando mantenimiento a una torre de alta tensión'
-                width={1280}
-                height={720}
-                sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
-                loading='lazy'
-                className='w-full rounded-3xl'
-              />
+              <div className='bg-card/40 rounded-3xl p-2 border'>
+                <Image
+                  src='/images/home-solutions.webp'
+                  alt='Trabajadores dando mantenimiento a una torre de alta tensión'
+                  width={1280}
+                  height={720}
+                  sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                  loading='lazy'
+                  className='w-full rounded-xl'
+                />
+              </div>
             </div>
           </div>
-          <div className='cols-container mt-spacing-7 gap-y-gutter lg:gap-y-0'>
+          <div className='cols-container mt-spacing-6 gap-y-gutter lg:gap-y-0'>
             {services.map((item, key) => {
-              const Icon = servicesIcons[key] || (() => <Icons.ImageOff className={serviceIconStyle} />)
+              const ServiceIcon = servicesIcons[key]
+
               return (
                 <Card
                   key={key}
                   as='article'
-                  className='group w-8-cols lg:w-4-cols bg-black rounded-3xl relative p-0.5'
+                  className='group w-8-cols bg-card/50 lg:w-4-cols rounded-3xl relative xxs:py-0.5 xxs:px-0'
                 >
-                  <span className='h-4 absolute inset-x-0 top-0 overflow-hidden rounded-full'>
-                    <span className='absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(180,25,25,0.6)_0%,rgba(180,25,25,0)_75%)] opacity-60 transition-opacity duration-500 group-hover:opacity-100' />
+                  <span className='h-5 group-hover:h-8 absolute inset-x-0 top-0 overflow-hidden rounded-full transition-[height] duration-300'>
+                    <span className='absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(180,25,25,0.6)_0%,rgba(180,25,25,0)_75%)] opacity-50 transition-opacity duration-300 group-hover:opacity-100' />
                   </span>
-                  <div className='w-full h-full relative z-10 bg-black/60 group-hover:bg-black/50 rounded-3xl px-2 py-6 transition-colors duration-300 space-y-spacing-7'>
-                    <CardContent>
-                      <Icon />
+                  <div className='w-full h-full relative z-10 bg-card/20 group-hover:bg-card/60 rounded-3xl p-gutter transition-colors duration-300'>
+                    <CardContent className='pt-spacing-5 pb-spacing-6 relative'>
+                      {ServiceIcon ? <ServiceIcon className='w-auto h-48 mx-auto fill-transparent stroke-accent stroke-[4px] relative' /> : <Icons.ImageOff className='w-auto h-48 mx-auto fill-accent' />}
+                      {ServiceIcon && <ServiceIcon className='w-auto h-48 fill-transparent stroke-accent stroke-[4px] absolute inset-0 m-auto scale-110 blur' />}
                     </CardContent>
                     <CardHeader>
                       <h3 className='f-heading-3'>
@@ -71,8 +76,8 @@ export default function IndexPage () {
                         {item.description}
                       </p>
                       {item.slug && (
-                        <div className='mt-spacing-5'>
-                          <CallToAction href={item.slug} variant='secondary' contentClassName='flex gap-x-2 items-center'>
+                        <div className='mt-spacing-6'>
+                          <CallToAction href={item.slug} variant='secondary' contentClassName='flex gap-x-2 items-center justify-center'>
                             Saber mas
                             <LightningBoltIcon className='w-auto h-3.5' />
                           </CallToAction>
@@ -80,7 +85,7 @@ export default function IndexPage () {
                       )}
                     </CardHeader>
                   </div>
-                  <span className='absolute -bottom-0 left-[1.125rem] h-0.5 w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-500 group-hover:opacity-60' />
+                  <span className='absolute -bottom-0 left-[1.125rem] h-0.5 w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-300 group-hover:opacity-60' />
                 </Card>
               )
             })}

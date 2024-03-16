@@ -11,7 +11,7 @@ const Card = React.forwardRef<
   <Comp
     ref={ref}
     className={cn(
-      'bg-card shadow border p-gutter',
+      'bg-card border p-gutter',
       className
     )}
     {...props}
