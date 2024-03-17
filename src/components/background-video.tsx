@@ -1,7 +1,7 @@
 'use client'
-import React from 'react'
-import { PauseIcon, PlayIcon } from '@radix-ui/react-icons'
+import { useRef, useState, type MouseEvent } from 'react'
 import { Button } from '@/components/ui/button'
+import { PauseIcon, PlayIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
 
 interface BackgroundVideoProps {
@@ -9,9 +9,9 @@ interface BackgroundVideoProps {
 }
 
 export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
-  const [isPlaying, setIsPlaying] = React.useState(false)
-  const videoRef = React.useRef<HTMLVideoElement>(null)
-  const preventContextMenu = (event: React.MouseEvent<HTMLVideoElement>) => event.preventDefault()
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const preventContextMenu = (event: MouseEvent<HTMLVideoElement>) => event.preventDefault()
 
   const handleVideo = () => {
     const videoNode = videoRef.current
@@ -34,7 +34,7 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
         animate={{
           width: ['50%', '50%', '50%', '100%', '100%', '100%', '100%'],
           height: ['75%', '75%', '75%', '75%', '100%', '100%', '100%'],
-          borderRadius: [24, 24, 24, 24, 0],
+          borderRadius: [24, 24, 24, 0, 0],
           y: ['200%', '0%', '0%', '0%']
         }}
         transition={{
