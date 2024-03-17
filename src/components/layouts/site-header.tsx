@@ -167,7 +167,11 @@ export default function SiteHeader () {
             <div className='text-sm sm:text-base text-muted-foreground'>
               Correo electrónico
             </div>
-            <Link className='px-0 text-lg' href={`mailto:${contactEmail}`} onClick={() => setIsMenuOpen(false)}>
+            <Link
+              href={`mailto:${contactEmail}`}
+              onClick={() => setIsMenuOpen(false)}
+              className='px-0 text-lg'
+            >
               {contactEmail}
             </Link>
           </div>
