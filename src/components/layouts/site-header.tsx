@@ -43,7 +43,7 @@ export default function SiteHeader () {
         animate={{ y: visible ? 0 : -100 }}
         transition={{
           duration: 0.3,
-          delay: 0.3
+          delay: 1
         }}
         className='w-full sticky top-0 left-0 z-40'
       >
@@ -56,9 +56,8 @@ export default function SiteHeader () {
               className='w-full h-[74px] lg:h-24 flex justify-between items-center'
             >
               <div className='h-10 lg:h-12'>
-                <NextLink href='/' onClick={closeMenu} className='relative'>
-                  <Icons.Logoalt className='w-auto h-full relative z-10' />
-                  <Icons.Logoalt className='w-auto h-full fill-accent/40 absolute inset-0 blur scale-105' />
+                <NextLink href='/' onClick={closeMenu}>
+                  <Icons.Logoalt className='w-auto h-full' />
                   <span className='sr-only'>{siteConfig.name} home</span>
                 </NextLink>
               </div>

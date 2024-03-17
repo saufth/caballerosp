@@ -33,12 +33,13 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
         }}
         animate={{
           width: ['50%', '50%', '50%', '100%', '100%', '100%', '100%'],
-          height: ['75%', '75%', '75%', '75%', '100%', '100%', '100%'],
-          borderRadius: [24, 24, 24, 0, 0],
+          height: ['75%', '75%', '75%', '100%', '100%', '100%', '100%'],
+          borderRadius: [24, 24, 0, 0, 0],
           y: ['200%', '0%', '0%', '0%']
         }}
         transition={{
-          duration: 2
+          duration: 2.5,
+          delay: 0.1
         }}
         className='absolute m-auto inset-0 overflow-hidden'
       >
