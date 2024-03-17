@@ -1,11 +1,12 @@
 'use client'
 import { useState } from 'react'
-import { AnimatePresence, useMotionValueEvent, useScroll } from 'framer-motion'
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { ArrowRightIcon, LightningBoltIcon } from '@radix-ui/react-icons'
 import { CallToAction } from '@/components/call-to-action'
+import { Icons } from '@/components/icons'
 import { Link } from '@/components/ui/link'
-import { Logotype } from '@/components/layouts/logotype'
 import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
+import NextLink from '@/components/ui/next-link'
 import { cn } from '@/lib/utils'
 import { contactEmail } from '@/config/organization'
 import { siteConfig, siteNav } from '@/config/site'
@@ -14,7 +15,7 @@ export default function SiteHeader () {
   const { scrollYProgress } = useScroll()
   const [isOnTop, setIsOnTop] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(true)
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
@@ -26,15 +27,11 @@ export default function SiteHeader () {
 
       setIsOnTop(isScrollOnTop)
 
-      if (isScrollOnTop) {
-        setVisible(true)
-      } else {
-        if (direction < 0) {
-          setVisible(false)
-        } else {
-          setVisible(true)
-        }
-      }
+      isScrollOnTop
+        ? setVisible(true)
+        : direction < 0
+          ? setVisible(true)
+          : setVisible(false)
     }
   })
 
@@ -42,12 +39,25 @@ export default function SiteHeader () {
 
   return (
     <AnimatePresence mode='wait'>
-      <header
-        className={cn(
-          'w-full sticky top-0 left-0 z-40 border-b transition-[background-color,border-color,top] duration-300 bg-background/70 backdrop-filter backdrop-saturate-150 backdrop-blur-lg',
-          (isOnTop || isMenuOpen) && 'bg-transparent border-transparent backdrop-filter-none',
-          visible && '-top-20 lg:-top-28'
-        )}
+      <motion.header
+        initial={{
+          opacity: 1,
+          backgroundColor: 'transparent',
+          borderColor: 'transparent',
+          backdropFilter: 'blur(0) saturate(0)',
+          y: -100
+        }}
+        animate={{
+          opacity: visible ? 1 : 0,
+          backgroundColor: (isOnTop || isMenuOpen) ? 'transparent' : 'oklch(var(--background) / 0.7)',
+          borderColor: (isOnTop || isMenuOpen) ? 'transparent' : 'oklch(var(--border)',
+          backdropFilter: (isOnTop || isMenuOpen) ? 'none' : 'blur(16px) saturate(1.5)',
+          y: visible ? 0 : -100
+        }}
+        transition={{
+          duration: 0.2
+        }}
+        className='w-full sticky top-0 left-0 z-40 border-b bg-background/70 backdrop-saturate-150 backdrop-blur-lg'
       >
         <nav
           className={cn('relative border-t-4 border-accent transition-[border]', !isOnTop && 'border-t-0')}
@@ -58,7 +68,10 @@ export default function SiteHeader () {
               className='w-full h-[74px] lg:h-24 flex justify-between items-center'
             >
               <div className='h-10 lg:h-12'>
-                <Logotype onClick={closeMenu} />
+                <NextLink href='/' onClick={closeMenu}>
+                  <Icons.Logoalt className='w-auto h-full stroke-primary [fill-opacity:0] animate-draw [stroke-dasharray:1300] [stroke-dashoffset:1300]' />
+                  <span className='sr-only'>{siteConfig.name} home</span>
+                </NextLink>
               </div>
               <div className='flex items-center gap-x-5'>
                 <div className='hidden lg:flex items-center gap-x-5'>
@@ -93,7 +106,7 @@ export default function SiteHeader () {
             </div>
           </div>
         </nav>
-      </header>
+      </motion.header>
       <div
         className={cn(
           'w-full h-0 bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-hidden transition-[height] duration-300',
