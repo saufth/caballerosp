@@ -140,23 +140,9 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)'
       },
       animation: {
-        show: 'show 1s ease-in forwards',
-        'video-bg': 'video-bg 0.5s ease-in forwards'
+        show: 'show 1s ease-in forwards'
       },
       keyframes: {
-        'video-bg': {
-          '0%': {
-            'border-radius': '1.5rem'
-          },
-          '33%': {
-            'border-radius': '1.5rem'
-          },
-          '100%': {
-            width: '100%',
-            height: '100%',
-            'border-radius': '0'
-          }
-        },
         show: {
           '0%': {
             opacity: '0'

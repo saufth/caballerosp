@@ -2,6 +2,7 @@
 import React from 'react'
 import { PauseIcon, PlayIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
+import { motion } from 'framer-motion'
 
 interface BackgroundVideoProps {
   src: string
@@ -22,23 +23,43 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
   }
 
   return (
-    <div className='absolute w-1/2 h-3/4 m-auto inset-0 rounded-3xl overflow-hidden z-0 animate-video-bg [animation-delay:1s]'>
-      <video
-        className='w-full h-full object-cover relative'
-        width={1920}
-        height={1080}
-        controls={false}
-        autoPlay
-        muted
-        loop
-        playsInline
-        disablePictureInPicture
-        controlsList='nodownload noplaybackrate'
-        onContextMenu={preventContextMenu}
-        ref={videoRef}
+    <div className='absolute inset-0 overflow-hidden z-0'>
+      <motion.div
+        initial={{
+          width: '50%',
+          height: '75%',
+          borderRadius: 24,
+          y: '200%'
+        }}
+        animate={{
+          width: ['50%', '50%', '50%', '100%', '100%', '100%', '100%'],
+          height: ['75%', '75%', '75%', '75%', '100%', '100%', '100%'],
+          borderRadius: [24, 24, 24, 24, 0],
+          y: ['200%', '0%', '0%', '0%']
+        }}
+        transition={{
+          duration: 2
+        }}
+        className='absolute m-auto inset-0 overflow-hidden'
       >
-        <source src={src} type='video/mp4' />
-      </video>
+        <video
+          className='w-full h-full object-cover relative'
+          width={1920}
+          height={1080}
+          controls={false}
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          controlsList='nodownload noplaybackrate'
+          onContextMenu={preventContextMenu}
+          ref={videoRef}
+        >
+          <source src={src} type='video/mp4' />
+        </video>
+        <div className='absolute inset-0 bg-black/40 z-10' />
+      </motion.div>
       <Button
         className='group absolute bottom-4 lg:bottom-5 left-4 lg:left-auto border lg:right-5 z-20 bg-black hover:bg-white'
         onClick={handleVideo}
@@ -69,7 +90,6 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
               )}
         </span>
       </Button>
-      <div className='absolute inset-0 bg-black/40 z-10' />
     </div>
   )
 }
