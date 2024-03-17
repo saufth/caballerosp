@@ -1,13 +1,12 @@
 'use client'
 import { useState } from 'react'
+import NextLink from '@/components/ui/next-link'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { ArrowRightIcon, LightningBoltIcon } from '@radix-ui/react-icons'
 import { CallToAction } from '@/components/call-to-action'
 import { Icons } from '@/components/icons'
 import { Link } from '@/components/ui/link'
 import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
-import NextLink from '@/components/ui/next-link'
-import { cn } from '@/lib/utils'
 import { contactEmail } from '@/config/organization'
 import { siteConfig, siteNav } from '@/config/site'
 
@@ -40,36 +39,26 @@ export default function SiteHeader () {
   return (
     <AnimatePresence mode='wait'>
       <motion.header
-        initial={{
-          opacity: 1,
-          backgroundColor: 'transparent',
-          borderColor: 'transparent',
-          backdropFilter: 'blur(0) saturate(0)',
-          y: -100
-        }}
-        animate={{
-          opacity: visible ? 1 : 0,
-          backgroundColor: (isOnTop || isMenuOpen) ? 'transparent' : 'oklch(var(--background) / 0.7)',
-          borderColor: (isOnTop || isMenuOpen) ? 'transparent' : 'oklch(var(--border)',
-          backdropFilter: (isOnTop || isMenuOpen) ? 'none' : 'blur(16px) saturate(1.5)',
-          y: visible ? 0 : -100
-        }}
+        initial={{ y: -100 }}
+        animate={{ y: visible ? 0 : -100 }}
         transition={{
-          duration: 0.2
+          duration: 0.3,
+          delay: 0.3
         }}
-        className='w-full sticky top-0 left-0 z-40 border-b bg-background/70 backdrop-saturate-150 backdrop-blur-lg'
+        className='w-full sticky top-0 left-0 z-40'
       >
         <nav
-          className={cn('relative border-t-4 border-accent transition-[border]', !isOnTop && 'border-t-0')}
+          className='relative'
           aria-label={`${siteConfig.name} directory`}
         >
-          <div className='container'>
+          <div className='container relative z-10'>
             <div
               className='w-full h-[74px] lg:h-24 flex justify-between items-center'
             >
               <div className='h-10 lg:h-12'>
-                <NextLink href='/' onClick={closeMenu}>
-                  <Icons.Logoalt className='w-auto h-full stroke-primary [fill-opacity:0] animate-draw [stroke-dasharray:1300] [stroke-dashoffset:1300]' />
+                <NextLink href='/' onClick={closeMenu} className='relative'>
+                  <Icons.Logoalt className='w-auto h-full relative z-10' />
+                  <Icons.Logoalt className='w-auto h-full fill-accent/40 absolute inset-0 blur scale-105' />
                   <span className='sr-only'>{siteConfig.name} home</span>
                 </NextLink>
               </div>
@@ -96,22 +85,68 @@ export default function SiteHeader () {
                   </CallToAction>
                 </div>
                 <div className='block lg:hidden'>
-                  <div className='block lg:hidden w-8 h-2.5 relative [&>span]:transition-all [&>span]:duration-300' onClick={toggleMenu}>
-                    <span className={cn('w-4/5 h-0.5 bg-primary absolute top-0 left-0', isMenuOpen && 'bg-emah inset-0 m-auto rotate-45')} />
-                    <span className={cn('w-4/5 h-0.5 bg-primary absolute bottom-0 right-0', isMenuOpen && 'bg-emah inset-0 m-auto -rotate-45')} />
+                  <button className='block lg:hidden w-9 h-2.5 relative' onClick={toggleMenu}>
+                    <motion.span
+                      initial={{
+                        backgroundColor: 'oklch(var(--foreground))',
+                        top: 0,
+                        left: 0
+                      }}
+                      animate={{
+                        backgroundColor: isMenuOpen ? 'oklch(var(--accent))' : 'oklch(var(--foreground))',
+                        top: isMenuOpen ? 3.8 : 0,
+                        left: isMenuOpen ? 3.6 : 0,
+                        rotate: isMenuOpen ? 45 : 0
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        delay: 0.3
+                      }}
+                      className='w-4/5 h-0.5 absolute'
+                    />
+                    <motion.span
+                      initial={{
+                        backgroundColor: 'oklch(var(--foreground))',
+                        bottom: 0,
+                        right: 0
+                      }}
+                      animate={{
+                        backgroundColor: isMenuOpen ? 'oklch(var(--accent))' : 'oklch(var(--foreground))',
+                        bottom: isMenuOpen ? 3.8 : 0,
+                        right: isMenuOpen ? 3.6 : 0,
+                        rotate: isMenuOpen ? -45 : 0
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        delay: 0.3
+                      }}
+                      className='w-4/5 h-0.5 absolute'
+                    />
                     <span className='sr-only'>Toggle menu</span>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: (isOnTop || isMenuOpen) ? 0 : 1 }}
+            transition={{
+              duration: 0.3,
+              delay: 0.3
+            }}
+            className='absolute inset-0 border-b bg-background/70 backdrop-saturate-150 backdrop-blur-lg'
+          />
         </nav>
       </motion.header>
-      <div
-        className={cn(
-          'w-full h-0 bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-hidden transition-[height] duration-300',
-          isMenuOpen && 'h-[100dvh]'
-        )}
+      <motion.div
+        initial={{ height: '0px' }}
+        animate={{ height: isMenuOpen ? '100dvh' : '0px' }}
+        transition={{
+          duration: isMenuOpen ? 0.5 : 0.3,
+          delay: isMenuOpen ? 0.5 : 0.4
+        }}
+        className='w-full bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-hidden'
       >
         <ul className='container mt-spacing-8'>
           {siteConfig.mainNav.map((navItem, key) => (
@@ -137,7 +172,7 @@ export default function SiteHeader () {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className='w-14 h-14 bg-background border rounded-full grid place-content-center lg:hidden fixed bottom-gutter right-gutter z-50'>
         <WhatsappMenu />
       </div>

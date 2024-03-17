@@ -18,7 +18,7 @@ export function WhatsappMenu () {
           variant='ghost'
           className='group h-10 px-0 lg:px-0 bg-transparent focus-visible:ring-0 hover:bg-transparent ring-0 border-0'
         >
-          <Icons.WhatsappOutlined className='w-8 h-auto' />
+          <Icons.WhatsappOutlined className='w-7 h-auto' />
           <span className='sr-only'>Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>

@@ -64,18 +64,6 @@ const config: Config = {
         sans: ['var(--font-sans)', ...fontFamily.sans]
       },
       colors: {
-        rehsok: 'oklch(52.43% 0.115 245.85 / <alpha-value>)', /* #246FA8 */
-        emah: 'oklch(67.59% 0.217 38.8 / <alpha-value>)', /* #FF5500 */
-        keyperspot: 'oklch(66.69% 0.14267133700943277 235.5994356712896 / <alpha-value>)', /* #00A0DF */
-        taxo: {
-          100: 'oklch(87.47% 0.029 238.28 / <alpha-value>)', /* #C5D9E7 */
-          200: 'oklch(82.17% 0.054 250.22 / <alpha-value>)', /* #ABC8E7 */
-          300: 'oklch(72.64% 0.077 241.86 / <alpha-value>)', /* #7BADD3 */
-          400: 'oklch(56.08% 0.131 241.32 / <alpha-value>)', /* #007CBA */
-          500: 'oklch(47.44% 0.122 246.18 / <alpha-value>)' /* #00609C */
-        },
-        sercius: 'oklch(22.53% 0.09079116383808032 259.76824527813346 / <alpha-value>)', /* #001845 */
-        techgeeks: 'oklch(67.99% 0.172 254.69 / <alpha-value>)', /* #4399FF */
         primary: {
           DEFAULT: 'oklch(var(--primary) / <alpha-value>)',
           foreground: 'oklch(var(--primary-foreground) / <alpha-value>)'
@@ -152,7 +140,6 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)'
       },
       animation: {
-        draw: 'draw 2s ease-in forwards',
         show: 'show 1s ease-in forwards',
         'video-bg': 'video-bg 0.5s ease-in forwards'
       },
@@ -168,24 +155,6 @@ const config: Config = {
             width: '100%',
             height: '100%',
             'border-radius': '0'
-          }
-        },
-        draw: {
-          '30%': {
-            'fill-opacity': '0'
-          },
-          '80%': {
-            'stroke-width': '1'
-          },
-          '99%': {
-            'fill-opacity': '100%',
-            'stroke-dashoffset': '0',
-            'stroke-width': '0'
-          },
-          '100%': {
-            'fill-opacity': '100%',
-            'stroke-dashoffset': '0',
-            'stroke-width': '0'
           }
         },
         show: {
@@ -204,16 +173,6 @@ const config: Config = {
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
-          'bg-grid': (value: any) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-            )}")`
-          }),
-          'bg-grid-small': (value: any) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-            )}")`
-          }),
           'bg-dot': (value: any) => ({
             backgroundImage: `url("${svgToDataUri(
               `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
