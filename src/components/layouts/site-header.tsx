@@ -1,36 +1,52 @@
 'use client'
-import React from 'react'
-import NextLink from 'next/link'
-import { useMotionValueEvent, useScroll } from 'framer-motion'
+import { useState } from 'react'
+import { AnimatePresence, useMotionValueEvent, useScroll } from 'framer-motion'
 import { ArrowRightIcon, LightningBoltIcon } from '@radix-ui/react-icons'
 import { CallToAction } from '@/components/call-to-action'
-import { Icons } from '@/components/icons'
 import { Link } from '@/components/ui/link'
+import { Logotype } from '@/components/layouts/logotype'
 import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
 import { cn } from '@/lib/utils'
 import { contactEmail } from '@/config/organization'
 import { siteConfig, siteNav } from '@/config/site'
 
 export default function SiteHeader () {
-  const { scrollY } = useScroll()
-  const [isOnTop, setIsOnTop] = React.useState(true)
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const { scrollYProgress } = useScroll()
+  const [isOnTop, setIsOnTop] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [visible, setVisible] = useState(false)
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
-  useMotionValueEvent(scrollY, 'change', (latestScrollY) => {
-    setIsOnTop(latestScrollY < 1)
+  useMotionValueEvent(scrollYProgress, 'change', (latestScrollY) => {
+    if (typeof latestScrollY === 'number') {
+      const direction = latestScrollY! - scrollYProgress.getPrevious()!
+      const isScrollOnTop = scrollYProgress.get() < 0.05
+
+      setIsOnTop(isScrollOnTop)
+
+      if (isScrollOnTop) {
+        setVisible(true)
+      } else {
+        if (direction < 0) {
+          setVisible(false)
+        } else {
+          setVisible(true)
+        }
+      }
+    }
   })
 
   const contactLink = siteConfig.mainNav.find(({ href }) => href === '/contacto')!
 
   return (
-    <>
+    <AnimatePresence mode='wait'>
       <header
         className={cn(
-          'w-full sticky top-0 left-0 z-40 border-b transition-colors duration-300 bg-background/70 backdrop-filter backdrop-saturate-150 backdrop-blur-lg transition-color',
-          (isOnTop || isMenuOpen) && 'bg-transparent border-transparent backdrop-filter-none'
+          'w-full sticky top-0 left-0 z-40 border-b transition-[background-color,border-color,top] duration-300 bg-background/70 backdrop-filter backdrop-saturate-150 backdrop-blur-lg',
+          (isOnTop || isMenuOpen) && 'bg-transparent border-transparent backdrop-filter-none',
+          visible && '-top-20 lg:-top-28'
         )}
       >
         <nav
@@ -42,10 +58,7 @@ export default function SiteHeader () {
               className='w-full h-[74px] lg:h-24 flex justify-between items-center'
             >
               <div className='h-10 lg:h-12'>
-                <NextLink href='/' onClick={closeMenu}>
-                  <Icons.Logoalt className='w-auto h-full stroke-primary [fill-opacity:0] animate-draw [stroke-dasharray:1300] [stroke-dashoffset:1300]' />
-                  <span className='sr-only'>{siteConfig.name} home</span>
-                </NextLink>
+                <Logotype onClick={closeMenu} />
               </div>
               <div className='flex items-center gap-x-5'>
                 <div className='hidden lg:flex items-center gap-x-5'>
@@ -115,6 +128,6 @@ export default function SiteHeader () {
       <div className='w-14 h-14 bg-background border rounded-full grid place-content-center lg:hidden fixed bottom-gutter right-gutter z-50'>
         <WhatsappMenu />
       </div>
-    </>
+    </AnimatePresence>
   )
 }
