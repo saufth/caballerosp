@@ -33,7 +33,7 @@ export default function IndexPage () {
               </h2>
               <p className='f-display-3 mt-spacing-4'>
                 Desde la planificación hasta la ejecución, nos ocupamos de
-                cada detalles.
+                cada detalle.
               </p>
             </div>
             <div className='w-8-cols lg:w-5-cols mt-spacing-5 lg:mt-0'>
@@ -65,14 +65,20 @@ export default function IndexPage () {
                   </span>
                   <div className='w-full h-full relative z-10 bg-card/20 group-hover:bg-card/10 rounded-3xl p-gutter transition-colors duration-300'>
                     <CardContent className='pt-spacing-5 pb-spacing-7 relative'>
-                      {ServiceIcon ? <ServiceIcon className='w-auto h-48 mx-auto fill-transparent stroke-accent stroke-[4px] relative' /> : <Icons.ImageOff className='w-auto h-48 mx-auto fill-accent' />}
-                      {ServiceIcon && <ServiceIcon className='w-auto h-48 fill-transparent stroke-accent stroke-[4px] absolute inset-x-0 top-spacing-5 mx-auto scale-110 blur group-hover:scale-[1.15] duration-300 transition-transform' />}
+                      {ServiceIcon
+                        ? (
+                          <>
+                            <ServiceIcon className='w-auto h-40 sm:h-48 mx-auto fill-transparent stroke-accent stroke-[4px] relative' />
+                            <ServiceIcon className='w-auto h-40 sm:h-48 fill-transparent stroke-accent stroke-[4px] absolute inset-x-0 top-spacing-5 mx-auto scale-110 blur group-hover:scale-[1.15] duration-300 transition-transform' />
+                          </>
+                          )
+                        : <Icons.ImageOff className='w-auto h-40 sm:h-48 mx-auto fill-accent' />}
                     </CardContent>
                     <CardHeader>
-                      <h3 className='f-heading-3'>
+                      <h3 className='f-subhead-2'>
                         {item.title}
                       </h3>
-                      <p className='f-body-1 text-muted-foreground text-balance mt-spacing-3'>
+                      <p className='f-body-1 text-muted-foreground mt-spacing-3'>
                         {item.description}
                       </p>
                       {item.slug && (

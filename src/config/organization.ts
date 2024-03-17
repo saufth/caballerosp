@@ -50,7 +50,7 @@ export const services: Category[] = [
   },
   {
     title: 'Mantenimiento eléctrico',
-    description: 'Preventivo, correctivo y predictivo. Garantizamos el funcionamiento óptimo de tu infraestructura eléctrica.',
+    description: 'Preventivo, correctivo y predictivo. Garantizamos el funcionamiento óptimo de toda infraestructura eléctrica.',
     slug: '/mantenimiento-electrico',
     items: [
       {
@@ -155,7 +155,7 @@ export const services: Category[] = [
   },
   {
     title: 'Diseño e ingeniería eléctrica',
-    description: 'Desarrollamos proyectos efecientes y seguros. Te ayudamos a construir el sistema adecuado para tu infraestructura.',
+    description: 'Desarrollamos proyectos efecientes y seguros. Te ayudamos a construir el sistema ideal para tu infraestructura.',
     slug: '/diseno-ingenieria-electrica',
     items: [
       {
