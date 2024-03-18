@@ -19,18 +19,19 @@ export default function SiteHeader () {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
-  useMotionValueEvent(scrollYProgress, 'change', (latestScrollY) => {
-    if (typeof latestScrollY === 'number') {
-      const direction = latestScrollY! - scrollYProgress.getPrevious()!
-      const isScrollOnTop = scrollYProgress.get() < 0.05
+  useMotionValueEvent(scrollYProgress, 'change', (current) => {
+    if (typeof current === 'number') {
+      const direction = current - scrollYProgress.getPrevious()!
 
-      setIsOnTop(isScrollOnTop)
-
-      isScrollOnTop
-        ? setVisible(true)
-        : direction < 0
+      if (scrollYProgress.get() < 0.05) {
+        setVisible(true)
+        setIsOnTop(true)
+      } else {
+        setIsOnTop(false)
+        direction < 0
           ? setVisible(true)
           : setVisible(false)
+      }
     }
   })
 
@@ -43,7 +44,7 @@ export default function SiteHeader () {
         animate={{ y: visible ? 0 : -100 }}
         transition={{
           duration: 0.3,
-          delay: 1
+          delay: 0.3
         }}
         className='w-full sticky top-0 left-0 z-40'
       >
