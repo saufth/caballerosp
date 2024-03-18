@@ -14,7 +14,7 @@ const callToActionVariants = cva(
         ghost: 'bg-primary/50'
       },
       size: {
-        default: 'h-8 md:h-9',
+        default: 'h-9 md:h-10',
         xs: 'h-6 md:h-7',
         sm: 'h-7 md:h-8',
         lg: 'h-11 md:h-14',
@@ -29,7 +29,7 @@ const callToActionVariants = cva(
 )
 
 const callToActionContentVariants = cva(
-  'h-full relative z-10 rounded-full transition-colors duration-300',
+  'h-full flex items-center relative z-10 rounded-full transition-colors duration-300',
   {
     variants: {
       variant: {

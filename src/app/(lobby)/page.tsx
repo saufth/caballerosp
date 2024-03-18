@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Hero from '@/components/sections/hero'
 import { siteConfig } from '@/config/site'
-import { services } from '@/config/organization'
+import { services, whatsappEmergencyUrl } from '@/config/organization'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Icons } from '@/components/icons'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
@@ -24,7 +24,7 @@ export default function IndexPage () {
         videoSrc='/video/home-hero.mp4'
       />
       <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
-        <div className='absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
+        <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
         <div className='container pt-spacing-7 relative'>
           <div className='cols-container'>
             <div className='w-8-cols lg:w-7-cols'>
@@ -95,6 +95,44 @@ export default function IndexPage () {
                 </Card>
               )
             })}
+          </div>
+        </div>
+      </section>
+      <section className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
+        <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
+        <div className='container pt-spacing-7 md:pt-spacing-9 relative'>
+          <div className='cols-container'>
+            <div className='w-8-cols md:w-4-cols lg:w-6-cols md:order-2'>
+              <h2 className='f-subhead-2 font-medium text-muted-foreground'>
+                Emergencias
+              </h2>
+              <p className='f-display-3 mt-spacing-4 text-balance'>
+                Atendemos tus necesidades más urgentes, no importa el día ni la hora.
+              </p>
+              <CallToAction
+                href={whatsappEmergencyUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='Whatsapp de emergencias, se abre en una nueva pestaña'
+                variant='secondary'
+                className='mt-spacing-6'
+                contentClassName='gap-x-2'
+              >
+                Emergencias
+                <Icons.WhatsappOutlined className='w-auto h-5 lg:h-6' />
+              </CallToAction>
+            </div>
+            <div className='w-8-cols md:w-4-cols lg:w-6-cols mt-spacing-7 md:mt-0 md:order-1'>
+              <Image
+                src='/images/emergency.webp'
+                alt='Trabajadores dando mantenimiento a una torre de alta tensión'
+                width={690}
+                height={740}
+                sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                loading='lazy'
+                className='w-full rounded-xl'
+              />
+            </div>
           </div>
         </div>
       </section>
