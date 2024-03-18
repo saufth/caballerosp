@@ -39,7 +39,8 @@ export default function BackgroundVideo ({ src }: BackgroundVideoProps) {
         }}
         transition={{
           duration: 2.5,
-          delay: 0.1
+          delay: 0.1,
+          type: 'keyframes'
         }}
         className='absolute m-auto inset-0 overflow-hidden'
       >

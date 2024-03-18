@@ -100,7 +100,8 @@ export default function SiteHeader () {
                       }}
                       transition={{
                         duration: 0.3,
-                        delay: 0.3
+                        delay: 0.3,
+                        type: 'spring'
                       }}
                       className='w-4/5 h-0.5 absolute'
                     />
@@ -118,7 +119,8 @@ export default function SiteHeader () {
                       }}
                       transition={{
                         duration: 0.3,
-                        delay: 0.3
+                        delay: 0.3,
+                        type: 'spring'
                       }}
                       className='w-4/5 h-0.5 absolute'
                     />
@@ -131,7 +133,10 @@ export default function SiteHeader () {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isOnTop || isMenuOpen ? 0 : 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{
+              duration: 0.5,
+              type: 'spring'
+            }}
             className='absolute inset-0 border-b bg-background/70 backdrop-saturate-150 backdrop-blur-lg'
           />
         </nav>
@@ -141,7 +146,8 @@ export default function SiteHeader () {
         animate={{ height: isMenuOpen ? '100dvh' : '0px' }}
         transition={{
           duration: isMenuOpen ? 0.5 : 0.3,
-          delay: isMenuOpen ? 0.5 : 0.4
+          delay: isMenuOpen ? 0.5 : 0.4,
+          type: 'spring'
         }}
         className='w-full bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-hidden'
       >
