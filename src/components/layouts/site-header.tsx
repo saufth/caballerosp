@@ -130,11 +130,8 @@ export default function SiteHeader () {
           </div>
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: (isOnTop || isMenuOpen) ? 0 : 1 }}
-            transition={{
-              duration: 0.3,
-              delay: 0.3
-            }}
+            animate={{ opacity: isOnTop || isMenuOpen ? 0 : 1 }}
+            transition={{ duration: 0.5 }}
             className='absolute inset-0 border-b bg-background/70 backdrop-saturate-150 backdrop-blur-lg'
           />
         </nav>
