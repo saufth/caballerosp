@@ -1,14 +1,14 @@
 'use client'
 import { useState } from 'react'
 import NextLink from '@/components/ui/next-link'
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { ArrowRightIcon, LightningBoltIcon } from '@radix-ui/react-icons'
 import { CallToAction } from '@/components/call-to-action'
 import { Icons } from '@/components/icons'
 import { Link } from '@/components/ui/link'
 import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { contactEmail } from '@/config/organization'
-import { siteConfig, siteNav } from '@/config/site'
+import { siteConfig } from '@/config/site'
 
 export default function SiteHeader () {
   const { scrollYProgress } = useScroll()
@@ -38,7 +38,7 @@ export default function SiteHeader () {
   const contactLink = siteConfig.mainNav.find(({ href }) => href === '/contacto')!
 
   return (
-    <AnimatePresence mode='wait'>
+    <>
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: visible ? 0 : -100 }}
@@ -65,8 +65,8 @@ export default function SiteHeader () {
               <div className='flex items-center gap-x-5'>
                 <div className='hidden lg:flex items-center gap-x-5'>
                   <ul className='flex items-center gap-x-5 pr-1'>
-                    {siteNav.map((navItem, key) => (
-                      <li key={key} className='last:hidden'>
+                    {siteConfig.mainNav.map((navItem, key) => (
+                      <li key={key} className='first:hidden last:hidden'>
                         <Link href={navItem.href}>
                           {navItem.title}
                         </Link>
@@ -180,6 +180,6 @@ export default function SiteHeader () {
       <div className='w-14 h-14 bg-background border rounded-full grid place-content-center lg:hidden fixed bottom-gutter right-gutter z-50'>
         <WhatsappMenu />
       </div>
-    </AnimatePresence>
+    </>
   )
 }
