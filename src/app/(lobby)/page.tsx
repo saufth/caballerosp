@@ -111,7 +111,7 @@ export default function IndexPage () {
                 Atendemos tus necesidades más urgentes, no importa el día ni la hora.
               </p>
               <div className='flex items-center gap-x-spacing-5 mt-spacing-6'>
-                <Icons.Emergency className='w-auto h-20 sm:h-24 xl:h-36' />
+                <Icons.Emergency className='w-auto h-20 sm:h-24 xl:h-36 opacity-90' />
                 <CallToAction
                   href={whatsappEmergencyUrl}
                   target='_blank'
