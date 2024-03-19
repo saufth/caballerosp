@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Hero from '@/components/sections/hero'
 import { siteConfig } from '@/config/site'
-import { services, whatsappEmergencyUrl } from '@/config/organization'
+import { emergencyPhone, services, whatsappEmergencyUrl } from '@/config/organization'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Icons } from '@/components/icons'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
 import { CallToAction } from '@/components/call-to-action'
+import { formatPhoneNumber } from '@/lib/utils'
 
 interface ClassName { className?: string }
 
@@ -103,28 +104,29 @@ export default function IndexPage () {
         <div className='container pt-spacing-7 md:pt-spacing-9 relative'>
           <div className='cols-container'>
             <div className='w-8-cols md:w-4-cols lg:w-6-cols md:order-2'>
-              <div className='flex items-center gap-x-spacing-4'>
-                <Icons.Emergency className='w-auto h-16 sm:h-20 xl:h-24' />
-                <h2 className='f-subhead-2 font-medium text-muted-foreground'>
-                  Emergencias
-                </h2>
-              </div>
+              <h2 className='f-subhead-2 font-medium text-muted-foreground'>
+                Emergencias
+              </h2>
               <p className='f-display-3 mt-spacing-4 text-balance'>
                 Atendemos tus necesidades más urgentes, no importa el día ni la hora.
               </p>
-              <CallToAction
-                href={whatsappEmergencyUrl}
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='Whatsapp de emergencias, se abre en una nueva pestaña'
-                variant='secondary'
-                size='lg'
-                className='mt-spacing-6'
-                contentClassName='gap-x-2'
-              >
-                Emergencias
-                <Icons.WhatsappOutlined className='w-auto h-5 lg:h-6' />
-              </CallToAction>
+              <div className='flex items-center gap-x-spacing-5 mt-spacing-6'>
+                <Icons.Emergency className='w-auto h-20 sm:h-24 xl:h-36' />
+                <CallToAction
+                  href={whatsappEmergencyUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Whatsapp de emergencias, se abre en una nueva pestaña'
+                  variant='secondary'
+                  size='lg'
+                  className=''
+                  contentClassName='gap-x-2'
+                >
+                  <Icons.WhatsappOutlined className='w-auto h-5 lg:h-6' />
+                  <span className='sr-only'>Teléfono de emergencias{' '}</span>
+                  {formatPhoneNumber(emergencyPhone)}
+                </CallToAction>
+              </div>
             </div>
             <div className='w-8-cols md:w-4-cols lg:w-6-cols mt-spacing-7 md:mt-0 md:order-1'>
               <Image
