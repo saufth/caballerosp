@@ -104,7 +104,7 @@ export default function IndexPage () {
           <div className='cols-container'>
             <div className='w-8-cols md:w-4-cols lg:w-6-cols md:order-2'>
               <div className='flex items-center gap-x-spacing-4'>
-                <Icons.Emergency className='w-auto h-16 lg:h-20 xl:h-24' />
+                <Icons.Emergency className='w-auto h-16 sm:h-20 xl:h-24' />
                 <h2 className='f-subhead-2 font-medium text-muted-foreground'>
                   Emergencias
                 </h2>
