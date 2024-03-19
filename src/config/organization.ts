@@ -199,7 +199,7 @@ export const services: Category[] = [
 
 export const experience: Article = {
   title: 'Nuestra experiencia',
-  description: 'Nunca nos detenemos. La experiencia guía nuestro camino, dejando huellas de satisfacción.',
+  description: 'Nunca nos detenemos. La experiencia guía nuestro camino, dejamos huellas de satisfacción en cada proyecto.',
   items: [
     'Instalaciones en baja tensión',
     'Subestaciones y puesta en marcha en 34.5 KV',

@@ -188,7 +188,7 @@
   }
 
   .f-subhead-2 {
-    @apply text-[1.2rem] sm:text-[1.25rem] lg:text-2xl leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em];
+    @apply text-[1.2rem] sm:text-[1.25rem] lg:text-2xl leading-[120%] sm:leading-[120%] xl:leading-[130%] -tracking-[0.01em];
   }
 
   .f-subhead-3 {

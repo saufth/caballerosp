@@ -1,19 +1,17 @@
 import Image from 'next/image'
 import Hero from '@/components/sections/hero'
-import { siteConfig } from '@/config/site'
-import { emergencyPhone, services, whatsappEmergencyUrl } from '@/config/organization'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Icons } from '@/components/icons'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
-import { CallToAction } from '@/components/call-to-action'
+import { CallToAction, CallToContact } from '@/components/call-to-action'
 import { formatPhoneNumber } from '@/lib/utils'
-
-interface ClassName { className?: string }
+import { emergencyPhone, experience, services, whatsappEmergencyUrl } from '@/config/organization'
+import { siteConfig } from '@/config/site'
 
 const servicesIcons = [
-  ({ className }: ClassName) => <Icons.Instalations className={className} />,
-  ({ className }: ClassName) => <Icons.Maintenance className={className} />,
-  ({ className }: ClassName) => <Icons.DesignEngineering className={className} />
+  Icons.Instalations,
+  Icons.Maintenance,
+  Icons.DesignEngineering
 ]
 
 export default function IndexPage () {
@@ -138,6 +136,54 @@ export default function IndexPage () {
                 loading='lazy'
                 className='w-full rounded-xl'
               />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
+        <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
+        <div className='container pt-spacing-7 md:pt-spacing-9 relative'>
+          <div className='cols-container'>
+            <div className='w-6-cols sm:w-8-cols lg:w-1/2-cols'>
+              <h2 className='f-subhead-3 font-medium text-muted-foreground'>
+                {experience.title}
+              </h2>
+              {typeof experience.description === 'string'
+                ? (
+                  <p className='f-heading-2 mt-spacing-4 text-balance'>
+                    {experience.description}
+                  </p>
+                  )
+                : experience.description && (
+                  <div className='mt-spacing-4 space-y-spacing-3'>
+                    {experience.description.map((paragraph, key) => (
+                      <p key={key} className='f-heading-2 text-balance'>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                )}
+              <div className='mt-spacing-6 space-y-spacing-4 pl-4'>
+                {experience.items.map((paragraph, key) => (
+                  <p key={key} className='f-subhead-2'>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              <CallToContact className='mt-spacing-6' />
+            </div>
+            <div className='w-6-cols sm:w-8-cols lg:w-1/2-cols h-md sm:h-xl lg:h-[720px] mt-spacing-7 lg:mt-0 rounded-xl relative overflow-hidden'>
+              <div className='aspect-video absolute inset-y-0 -left-1/2 xs:-left-1/4 md:left-0 lg:-left-1/2 mx-auto'>
+                <Image
+                  src='/images/home-experience.webp'
+                  alt='Trabajadores dando mantenimiento a una torre de alta tensión'
+                  width={1280}
+                  height={720}
+                  sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                  loading='lazy'
+                  className='aspect-video relative'
+                />
+              </div>
             </div>
           </div>
         </div>

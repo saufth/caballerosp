@@ -1,7 +1,9 @@
 import React from 'react'
 import NextLink from '@/components/ui/next-link'
+import { LightningBoltIcon } from '@radix-ui/react-icons'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
+import { siteConfig } from '@/config/site'
 
 const callToActionVariants = cva(
   'group w-fit block relative p-px rounded-full',
@@ -86,4 +88,32 @@ const CallToAction = (
 )
 CallToAction.displayName = 'CallToAction'
 
-export { CallToAction }
+type CustomCallToAction = Pick<CallToActionProps, 'className' | 'ref' | 'variant' | 'size'>
+
+const contactLink = siteConfig.mainNav.find(({ href }) => href === '/contacto')!
+
+const CallToContact = (
+  {
+    variant = 'secondary',
+    size = 'lg',
+    ...props
+  }: CustomCallToAction
+) => (
+  <CallToAction
+    href={contactLink.href}
+    variant={variant}
+    size={size}
+    aria-label='Ir a página de contacto'
+    contentClassName='flex items-center gap-x-2'
+    {...props}
+  >
+    {contactLink.title}
+    <LightningBoltIcon className='w-4 h-4 [&_*]:fill-secondary-foreground' />
+  </CallToAction>
+)
+CallToContact.displayName = 'CallToContact'
+
+export {
+  CallToAction,
+  CallToContact
+}

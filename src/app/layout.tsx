@@ -1,4 +1,4 @@
-import React from 'react'
+import { type PropsWithChildren } from 'react'
 import { type Metadata, type Viewport } from 'next'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import ThemeProvider from '@/components/layouts/theme-provider'
@@ -7,13 +7,13 @@ import GoogleSearchScript from '@/components/layouts/google-seacrch-script'
 import { cn } from '@/lib/utils'
 import { fontSans } from '@/lib/fonts'
 import { siteConfig } from '@/config/site'
-import { slogan, services } from '@/config/organization'
+import { services } from '@/config/organization'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} ⚊ ${slogan}`,
+    default: `${siteConfig.name} ⚊ ${siteConfig.description}`,
     template: `${siteConfig.name} ⚊ %s`
   },
   description: siteConfig.description,
@@ -49,7 +49,7 @@ export const viewport: Viewport = {
   colorScheme: 'normal'
 }
 
-export default function RootLayout ({ children }: React.PropsWithChildren) {
+export default function RootLayout ({ children }: PropsWithChildren) {
   return (
     <html
       lang='es'

@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
 import NextLink from '@/components/ui/next-link'
-import { ArrowRightIcon, LightningBoltIcon } from '@radix-ui/react-icons'
-import { CallToAction } from '@/components/call-to-action'
+import { ArrowRightIcon } from '@radix-ui/react-icons'
+import { CallToContact } from '@/components/call-to-action'
 import { Icons } from '@/components/icons'
 import { Link } from '@/components/ui/link'
 import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
@@ -34,8 +34,6 @@ export default function SiteHeader () {
       }
     }
   })
-
-  const contactLink = siteConfig.mainNav.find(({ href }) => href === '/contacto')!
 
   return (
     <>
@@ -75,15 +73,7 @@ export default function SiteHeader () {
                     ))}
                   </ul>
                   <WhatsappMenu />
-                  <CallToAction
-                    href={contactLink.href}
-                    variant='secondary'
-                    size='lg'
-                    contentClassName='flex items-center gap-x-2'
-                  >
-                    {contactLink.title}
-                    <LightningBoltIcon className='w-4 h-4 [&_*]:fill-secondary-foreground' />
-                  </CallToAction>
+                  <CallToContact />
                 </div>
                 <div className='block lg:hidden'>
                   <button className='block lg:hidden w-9 h-2.5 relative' onClick={toggleMenu}>
