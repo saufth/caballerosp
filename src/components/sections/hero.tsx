@@ -12,7 +12,7 @@ interface HeroProps extends HeadingWithOptionalDescription {
 
 export default function Hero ({ title, description, videoSrc }: HeroProps) {
   return (
-    <section className='screen-container -mt-[74px] lg:-mt-[96px] relative overflow-hidden border-t-4 lg:border-t-[6px] border-accent'>
+    <section className='screen-container -mt-[74px] lg:-mt-[96px] relative overflow-hidden border-t-[6px] border-accent'>
       <div className='container relative z-10 pt-28'>
         <div className='max-w-[340px] sm:max-w-xl xl:max-w-5xl'>
           <motion.h1
