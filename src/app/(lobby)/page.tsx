@@ -163,7 +163,7 @@ export default function IndexPage () {
                     ))}
                   </div>
                 )}
-              <div className='mt-spacing-6 space-y-spacing-4 pl-4'>
+              <div className='mt-spacing-6 space-y-spacing-4 pl-2 sm:pl-4'>
                 {experience.items.map((paragraph, key) => (
                   <p key={key} className='f-subhead-2'>
                     {paragraph}
