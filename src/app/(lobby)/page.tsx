@@ -103,9 +103,12 @@ export default function IndexPage () {
         <div className='container pt-spacing-7 md:pt-spacing-9 relative'>
           <div className='cols-container'>
             <div className='w-8-cols md:w-4-cols lg:w-6-cols md:order-2'>
-              <h2 className='f-subhead-2 font-medium text-muted-foreground'>
-                Emergencias
-              </h2>
+              <div className='flex items-center gap-x-spacing-4'>
+                <Icons.Emergency className='w-auto h-16 lg:h-20 xl:h-24' />
+                <h2 className='f-subhead-2 font-medium text-muted-foreground'>
+                  Emergencias
+                </h2>
+              </div>
               <p className='f-display-3 mt-spacing-4 text-balance'>
                 Atendemos tus necesidades más urgentes, no importa el día ni la hora.
               </p>
@@ -115,6 +118,7 @@ export default function IndexPage () {
                 rel='noopener noreferrer'
                 aria-label='Whatsapp de emergencias, se abre en una nueva pestaña'
                 variant='secondary'
+                size='lg'
                 className='mt-spacing-6'
                 contentClassName='gap-x-2'
               >
