@@ -172,17 +172,19 @@ export default function IndexPage () {
               </div>
               <CallToContact className='mt-spacing-6' />
             </div>
-            <div className='w-6-cols sm:w-8-cols lg:w-1/2-cols h-md sm:h-xl lg:h-[720px] mt-spacing-6 lg:mt-0 rounded-xl relative overflow-hidden'>
-              <div className='aspect-video absolute inset-y-0 -left-1/2 xs:-left-1/4 md:left-0 lg:-left-1/2 mx-auto'>
-                <Image
-                  src='/images/home-experience.webp'
-                  alt='Trabajadores dando mantenimiento a una torre de alta tensión'
-                  width={1280}
-                  height={720}
-                  sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
-                  loading='lazy'
-                  className='aspect-video relative'
-                />
+            <div className='w-6-cols sm:w-8-cols lg:w-1/2-cols h-md sm:h-xl lg:h-[720px] mt-spacing-6 lg:mt-0 p-2 relative bg-card/40 border rounded-xl'>
+              <div className='w-full h-full relative rounded-sm overflow-hidden'>
+                <div className='aspect-video absolute inset-y-0 -left-1/2 xs:-left-1/4 md:left-0 lg:-left-1/2 mx-auto'>
+                  <Image
+                    src='/images/home-experience.webp'
+                    alt='Trabajadores dando mantenimiento a una torre de alta tensión'
+                    width={1280}
+                    height={720}
+                    sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                    loading='lazy'
+                    className='aspect-video relative'
+                  />
+                </div>
               </div>
             </div>
           </div>
