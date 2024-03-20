@@ -215,7 +215,7 @@ export const clients: ItemExternal[] = [
     name: 'Aceway',
     url: 'https://aceway.mx/',
     image: {
-      src: '/images/clients/aceway-client.png',
+      src: '/images/clients/aceway-client.webp',
       alt: 'Logotipo de Aceway',
       width: 150,
       height: 120
@@ -225,17 +225,17 @@ export const clients: ItemExternal[] = [
     name: 'Apex Tool Group',
     url: 'https://www.apextoolgroup.com/',
     image: {
-      src: '/images/clients/apex-client.png',
+      src: '/images/clients/apex-client.webp',
       alt: 'Logotipo de Apex Tool Group',
       width: 150,
       height: 120
     }
   },
   {
-    name: 'Atletec',
+    name: 'Atlatec',
     url: 'https://atlatec.com/',
     image: {
-      src: '/images/clients/atletec-client.png',
+      src: '/images/clients/atlatec-client.webp',
       alt: 'Logotipo de Atletec',
       width: 150,
       height: 120
@@ -245,7 +245,7 @@ export const clients: ItemExternal[] = [
     name: 'Benteler',
     url: 'https://www.benteler.com/es/',
     image: {
-      src: '/images/clients/benteler-client.png',
+      src: '/images/clients/benteler-client.webp',
       alt: 'Logotipo de Benteler',
       width: 150,
       height: 120
@@ -255,7 +255,7 @@ export const clients: ItemExternal[] = [
     name: 'Delta TechOps',
     url: 'https://www.deltatechops.com/',
     image: {
-      src: '/images/clients/deltatechops-client.png',
+      src: '/images/clients/deltatechops-client.webp',
       alt: 'Logotipo de Delta TechOps',
       width: 150,
       height: 120
@@ -265,7 +265,7 @@ export const clients: ItemExternal[] = [
     name: 'Givaudan',
     url: 'https://www.givaudan.com/',
     image: {
-      src: '/images/clients/givaudan-client.png',
+      src: '/images/clients/givaudan-client.webp',
       alt: 'Logotipo de Givaudan',
       width: 150,
       height: 120
@@ -275,7 +275,7 @@ export const clients: ItemExternal[] = [
     name: 'IEM',
     url: 'https://piensaloiem.com.mx/',
     image: {
-      src: '/images/clients/iem-client.png',
+      src: '/images/clients/iem-client.webp',
       alt: 'Logotipo de IEM',
       width: 150,
       height: 120
@@ -285,7 +285,7 @@ export const clients: ItemExternal[] = [
     name: 'Interceramic',
     url: 'https://interceramic.com/mx/',
     image: {
-      src: '/images/clients/interceramic-client.png',
+      src: '/images/clients/interceramic-client.webp',
       alt: 'Logotipo de Interceramic',
       width: 150,
       height: 120
@@ -295,7 +295,7 @@ export const clients: ItemExternal[] = [
     name: 'Magna Cosma International',
     url: 'https://www.magna.com/es/empresa/empresa/grupos-de-magna/cosma/',
     image: {
-      src: '/images/clients/magna-client.png',
+      src: '/images/clients/magna-client.webp',
       alt: 'Logotipo de Magna Cosma International',
       width: 150,
       height: 120
@@ -305,7 +305,7 @@ export const clients: ItemExternal[] = [
     name: 'Martinrea International',
     url: 'https://www.martinrea.com/es/',
     image: {
-      src: '/images/clients/martinrea-client.png',
+      src: '/images/clients/martinrea-client.webp',
       alt: 'Logotipo de Martinrea International',
       width: 150,
       height: 120
@@ -315,7 +315,7 @@ export const clients: ItemExternal[] = [
     name: 'Nacobre',
     url: 'https://www.nacobre.com.mx/',
     image: {
-      src: '/images/clients/nacobre-client.png',
+      src: '/images/clients/nacobre-client.webp',
       alt: 'Logotipo de Nacobre',
       width: 150,
       height: 120
@@ -325,7 +325,7 @@ export const clients: ItemExternal[] = [
     name: 'Nutec',
     url: 'https://www.nutec.com/es/',
     image: {
-      src: '/images/clients/nutec-client.png',
+      src: '/images/clients/nutec-client.webp',
       alt: 'Logotipo de Nutec',
       width: 150,
       height: 120
@@ -335,7 +335,7 @@ export const clients: ItemExternal[] = [
     name: 'PetStar',
     url: 'https://www.petstar.mx/',
     image: {
-      src: '/images/clients/petstar-client.png',
+      src: '/images/clients/petstar-client.webp',
       alt: 'Logotipo de PetStar',
       width: 150,
       height: 120
@@ -345,7 +345,7 @@ export const clients: ItemExternal[] = [
     name: 'Ronal',
     url: 'https://www.ronal-wheels.com/es/',
     image: {
-      src: '/images/clients/ronal-client.png',
+      src: '/images/clients/ronal-client.webp',
       alt: 'Logotipo de Ronal',
       width: 150,
       height: 120
@@ -355,7 +355,7 @@ export const clients: ItemExternal[] = [
     name: 'Rehrig Pacific Company',
     url: 'https://rehrigpacific.mx/mx/',
     image: {
-      src: '/images/clients/rpacifi-client.png',
+      src: '/images/clients/rpacific-client.webp',
       alt: 'Logotipo de Rehrig Pacific Company',
       width: 150,
       height: 120
@@ -365,7 +365,7 @@ export const clients: ItemExternal[] = [
     name: 'Saavi Energía',
     url: 'https://www.saavienergia.com/',
     image: {
-      src: '/images/clients/saavi-client.png',
+      src: '/images/clients/saavi-client.webp',
       alt: 'Logotipo de Saavi Energía',
       width: 150,
       height: 120
@@ -375,7 +375,7 @@ export const clients: ItemExternal[] = [
     name: 'Safran',
     url: 'https://www.safran-group.com/es',
     image: {
-      src: '/images/clients/safran-client.png',
+      src: '/images/clients/safran-client.webp',
       alt: 'Logotipo de Safran',
       width: 150,
       height: 120
@@ -385,7 +385,7 @@ export const clients: ItemExternal[] = [
     name: 'Valeo',
     url: 'https://www.valeoservice.mx/',
     image: {
-      src: '/images/clients/valeo-client.png',
+      src: '/images/clients/valeo-client.webp',
       alt: 'Logotipo de Valeo',
       width: 150,
       height: 120
@@ -395,7 +395,7 @@ export const clients: ItemExternal[] = [
     name: 'Windsor',
     url: 'https://wmgtec.com/',
     image: {
-      src: '/images/clients/windsor-client.png',
+      src: '/images/clients/windsor-client.webp',
       alt: 'Logotipo de Windsor',
       width: 150,
       height: 120
@@ -405,7 +405,7 @@ export const clients: ItemExternal[] = [
     name: 'Yanfeng',
     url: 'https://www.yanfeng.com/en',
     image: {
-      src: '/images/clients/yanfeng-client.png',
+      src: '/images/clients/yanfeng-client.webp',
       alt: 'Logotipo de Windsor',
       width: 150,
       height: 120

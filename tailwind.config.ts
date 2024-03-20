@@ -140,15 +140,13 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)'
       },
       animation: {
-        show: 'show 1s ease-in forwards'
+        scroll:
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'
       },
       keyframes: {
-        show: {
-          '0%': {
-            opacity: '0'
-          },
-          '100%': {
-            opacity: '100%'
+        scroll: {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))'
           }
         }
       }

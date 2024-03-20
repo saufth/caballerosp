@@ -5,8 +5,9 @@ import { Icons } from '@/components/icons'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
 import { CallToAction, CallToContact } from '@/components/call-to-action'
 import { formatPhoneNumber } from '@/lib/utils'
-import { emergencyPhone, experience, services, whatsappEmergencyUrl } from '@/config/organization'
+import { clients, emergencyPhone, experience, services, whatsappEmergencyUrl } from '@/config/organization'
 import { siteConfig } from '@/config/site'
+import { MovingCards } from '@/components/cards/moving-card'
 
 const servicesIcons = [
   Icons.Instalations,
@@ -187,6 +188,21 @@ export default function IndexPage () {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
+        <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
+        <div className='container pt-spacing-9 relative'>
+          <h2 className='f-display-3 mt-spacing-4 text-center'>
+            Nuestros clientes
+          </h2>
+          <div className='flex flex-col antialiased items-center justify-center relative overflow-hidden mt-spacing-6'>
+            <MovingCards
+              items={clients}
+              direction='right'
+              speed='slow'
+            />
           </div>
         </div>
       </section>
