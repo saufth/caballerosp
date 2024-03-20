@@ -23,7 +23,7 @@ export default function IndexPage () {
         description='Desde instalaciones en baja tensión hasta proyectos en alta tensión, nuestro equipo altamente capacitado y comprometido se encarga de cada detalle.'
         videoSrc='/video/home-hero.mp4'
       />
-      <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
+      <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center'>
         <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
         <div className='container pt-spacing-7 relative'>
           <div className='cols-container'>
@@ -98,7 +98,7 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
+      <section className='bg-dot-white/[0.2] relative flex items-center justify-center'>
         <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
         <div className='container pt-spacing-7 md:pt-spacing-9 relative'>
           <div className='cols-container'>
@@ -141,7 +141,7 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
+      <section className='bg-dot-white/[0.2] relative flex items-center justify-center'>
         <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
         <div className='container pt-spacing-7 md:pt-spacing-9 relative'>
           <div className='cols-container'>
@@ -191,10 +191,10 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center"'>
+      <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center'>
         <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
-        <div className='container pt-spacing-9 relative'>
-          <h2 className='f-display-3 mt-spacing-4 text-center'>
+        <div className='full-bleed-container pt-spacing-9 relative overflow-hidden'>
+          <h2 className='f-display-3 text-center'>
             Nuestros clientes
           </h2>
           <div className='flex flex-col antialiased items-center justify-center relative overflow-hidden mt-spacing-6'>

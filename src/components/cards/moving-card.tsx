@@ -24,8 +24,10 @@ export const MovingCards = ({
 
   useEffect(() => {
     addAnimation()
-  }, [])
+  })
+
   const [start, setStart] = useState(false)
+
   function addAnimation () {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children)
@@ -42,6 +44,7 @@ export const MovingCards = ({
       setStart(true)
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === 'left') {
@@ -57,6 +60,7 @@ export const MovingCards = ({
       }
     }
   }
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === 'fast') {
@@ -64,7 +68,7 @@ export const MovingCards = ({
       } else if (speed === 'normal') {
         containerRef.current.style.setProperty('--animation-duration', '40s')
       } else {
-        containerRef.current.style.setProperty('--animation-duration', '255s')
+        containerRef.current.style.setProperty('--animation-duration', '500s')
       }
     }
   }
@@ -87,7 +91,7 @@ export const MovingCards = ({
       >
         {items.map((item, _idx) => (
           <li
-            className='w-64 sm:w-[350px] md:w-[450px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6'
+            className='w-64 sm:w-[320px] md:w-[450px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-6 sm:px-7 md:px-8 py-4 sm:py-5 md:py-6'
             style={{
               background:
                 'linear-gradient(180deg, var(--slate-800), var(--slate-900)'
@@ -97,9 +101,9 @@ export const MovingCards = ({
             <NextLink href={item.url}>
               <div
                 aria-hidden='true'
-                className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'
+                className='user-select-none -z-[1] pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'
               />
-              <span className='relative z-20 mx-auto sm:mx-0'>
+              <span className='relative z-20'>
                 <Image
                   src={item.image.src}
                   alt={item.image.alt}
@@ -107,10 +111,11 @@ export const MovingCards = ({
                   height={item.image.height}
                   sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                   loading='lazy'
+                  className='w-24 sm:w-28 md:w-[150px] h-auto'
                 />
               </span>
               <div className='relative z-20 mt-6'>
-                <div className='text-lg leading-[1.6] text-muted-foreground flex justify-end items-center gap-x-2'>
+                <div className='md:text-lg leading-[1.6] text-muted-foreground flex justify-end items-center gap-x-2'>
                   {item.name}
                   <ArrowRightIcon className='w-4 h-4 ml-2 [&_*]:fill-muted-foreground' />
                 </div>
