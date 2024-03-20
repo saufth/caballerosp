@@ -71,16 +71,15 @@ export default function Hero ({ title, description, videoSrc }: HeroProps) {
           >
             <CallToAction
               href='/#soluciones'
-              size='lg'
-              className='group h-16 lg:h-20 overflow-hidden'
-              contentClassName='flex gap-x-spacing-7'
+              className='group h-14 lg:h-[70px] overflow-hidden'
+              contentClassName='flex gap-x-spacing-6'
             >
-              <span className='z-30 text-lg text-primary-foreground transition-colors duration-700'>
+              <span className='z-30 lg:text-lg text-primary-foreground'>
                 Soluciones
               </span>
-              <div className='w-10 lg:w-11 h-10 lg:h-11 bg-accent rounded-full grid place-content-center relative z-20'>
+              <div className='w-8 lg:w-11 h-8 lg:h-11 bg-accent rounded-full grid place-content-center relative z-20'>
                 <LightningBoltIcon className='w-4 h-4 lg:w-5 lg:h-5 relative z-10 [&_*]:fill-accent-foreground group-hover:scale-[1.3] transition-transform duration-500' />
-                <div className='w-full h-full bg-accent/10 rounded-full absolute inset-0 -z-10 m-auto transition-transform duration-700 scale-0 group-hover:scale-[4]' />
+                <div className='w-full h-full bg-accent/10 rounded-full absolute inset-0 -z-10 m-auto transition-transform duration-500 scale-0 group-hover:scale-[4]' />
               </div>
             </CallToAction>
           </motion.div>

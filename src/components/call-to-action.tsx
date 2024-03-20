@@ -83,7 +83,7 @@ const CallToAction = (
     <div className={cn(callToActionContentVariants({ variant, size, className: contentClassName }))}>
       {children}
     </div>
-    <span className='absolute -bottom-0 left-[1.125rem] h-0.5 w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-500 group-hover:opacity-60' />
+    <span className='absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-500 group-hover:opacity-60' />
   </NextLink>
 )
 CallToAction.displayName = 'CallToAction'

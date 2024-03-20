@@ -87,7 +87,7 @@ export const MovingCards = ({
       >
         {items.map((item, _idx) => (
           <li
-            className='w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]'
+            className='w-64 sm:w-[350px] md:w-[450px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6'
             style={{
               background:
                 'linear-gradient(180deg, var(--slate-800), var(--slate-900)'
@@ -99,7 +99,7 @@ export const MovingCards = ({
                 aria-hidden='true'
                 className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'
               />
-              <span className='relative z-20'>
+              <span className='relative z-20 mx-auto sm:mx-0'>
                 <Image
                   src={item.image.src}
                   alt={item.image.alt}
