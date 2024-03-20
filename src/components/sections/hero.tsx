@@ -1,10 +1,9 @@
 'use client'
-import NextLink from '@/components/ui/next-link'
 import BackgroundVideo from '@/components/background-video'
-import { Button } from '@/components/ui/button'
+import { CallToAction } from '@/components/call-to-action'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
-import { type HeadingWithOptionalDescription } from '@/types'
 import { motion } from 'framer-motion'
+import { type HeadingWithOptionalDescription } from '@/types'
 
 interface HeroProps extends HeadingWithOptionalDescription {
   videoSrc?: string
@@ -21,7 +20,7 @@ export default function Hero ({ title, description, videoSrc }: HeroProps) {
             transition={{
               duration: 1,
               delay: 1,
-              type: 'spring'
+              type: 'tween'
             }}
             className='f-display-1 text-balance'
           >
@@ -35,7 +34,7 @@ export default function Hero ({ title, description, videoSrc }: HeroProps) {
                 transition={{
                   duration: 1,
                   delay: 1.2,
-                  type: 'spring'
+                  type: 'tween'
                 }}
                 className='f-heading-3 text-balance mt-spacing-4'
               >
@@ -49,7 +48,7 @@ export default function Hero ({ title, description, videoSrc }: HeroProps) {
                 transition={{
                   duration: 1,
                   delay: 1.2,
-                  type: 'spring'
+                  type: 'tween'
                 }}
                 className='mt-spacing-4 space-y-spacing-3'
               >
@@ -66,26 +65,24 @@ export default function Hero ({ title, description, videoSrc }: HeroProps) {
             transition={{
               duration: 1,
               delay: 1.5,
-              type: 'spring'
+              type: 'tween'
             }}
             className='mt-spacing-6'
           >
-            <Button
-              asChild
+            <CallToAction
+              href='/#soluciones'
               size='lg'
-              variant='default'
-              className='group bg-white h-16 lg:h-20 overflow-hidden'
+              className='group h-16 lg:h-20 overflow-hidden'
+              contentClassName='flex gap-x-spacing-7'
             >
-              <NextLink className='flex gap-x-spacing-7' href='/#soluciones'>
-                <span className='z-30 text-lg text-primary-foreground group-hover:text-foreground transition-colors duration-700'>
-                  Soluciones
-                </span>
-                <div className='w-10 h-10 rounded-full grid place-content-center relative z-20'>
-                  <LightningBoltIcon className='w-4 h-4 lg:w-5 lg:h-5 relative z-10 transition-transform duration-300 group-hover:scale-150' />
-                  <div className='w-full h-full bg-accent rounded-full absolute inset-0 -z-10 m-auto transition-transform duration-700 group-hover:scale-[16]' />
-                </div>
-              </NextLink>
-            </Button>
+              <span className='z-30 text-lg text-primary-foreground transition-colors duration-700'>
+                Soluciones
+              </span>
+              <div className='w-10 lg:w-11 h-10 lg:h-11 bg-accent rounded-full grid place-content-center relative z-20'>
+                <LightningBoltIcon className='w-4 h-4 lg:w-5 lg:h-5 relative z-10 [&_*]:fill-accent-foreground group-hover:scale-[1.3] transition-transform duration-500' />
+                <div className='w-full h-full bg-accent/10 rounded-full absolute inset-0 -z-10 m-auto transition-transform duration-700 scale-0 group-hover:scale-[4]' />
+              </div>
+            </CallToAction>
           </motion.div>
         </div>
       </div>

@@ -35,7 +35,7 @@ const callToActionContentVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary/70 group-hover:bg-primary/60 text-primary-foreground',
+        default: 'bg-primary/40 group-hover:bg-primary/60 text-primary-foreground',
         secondary: 'bg-secondary/50 group-hover:bg-secondary/40 text-secondary-foreground',
         destructive: 'bg-destructive/60 group-hover:bg-destructive/50 text-destructive-foreground',
         ghost: 'bg-primary/50 hover:bg-primary/60 border'

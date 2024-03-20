@@ -20,7 +20,7 @@
     --muted: 27.41% 0.005 286.03; /* #27272A */
     --muted-foreground: 71.19% 0.013 286.07; /* #A1A1AA */
     --accent: 49.4% 0.188 27.68; /* #B41919 */
-    --accent-foreground: 0% 0 0; /* #000000 */
+    --accent-foreground: 100% 0 0; /* #FFFFFF */
     --destructive: 39.59% 0.133 25.72; /* #7F1D1D */
     --destructive-foreground: 98.48% 0 0; /* #FAFAFA */
     --border: 31.91% 0.003 17.31; /* #343232 */
@@ -112,7 +112,7 @@
     --muted: 27.41% 0.005 286.03; /* #27272A */
     --muted-foreground: 71.19% 0.013 286.07; /* #A1A1AA */
     --accent: 49.4% 0.188 27.68; /* #B41919 */
-    --accent-foreground: 0% 0 0; /* #000000 */
+    --accent-foreground: 100% 0 0; /* #FFFFFF */
     --destructive: 39.59% 0.133 25.72; /* #7F1D1D */
     --destructive-foreground: 98.48% 0 0; /* #FAFAFA */
     --border: 31.91% 0.003 17.31; /* #343232 */
