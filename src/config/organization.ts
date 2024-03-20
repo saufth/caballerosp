@@ -14,9 +14,9 @@ export const contactPhone = '4422432453'
 
 export const emergencyPhone = '4424364177'
 
-export const whatsappUrl = `https://wa.me/1${contactPhone}`
+export const whatsappUrl = `https://wa.me/${contactPhone}`
 
-export const whatsappEmergencyUrl = `https://wa.me/1${emergencyPhone}`
+export const whatsappEmergencyUrl = `https://wa.me/${emergencyPhone}`
 
 export const location = 'Adolfo Lopez Mateo #30 Int.53 San Pablo 76125, Querétaro, Qro.'
 
