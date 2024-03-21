@@ -77,7 +77,7 @@ export const MovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        'scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+        'scroller relative z-20  max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
         className
       )}
     >
@@ -91,11 +91,7 @@ export const MovingCards = ({
       >
         {items.map((item, _idx) => (
           <li
-            className='w-64 sm:w-[320px] md:w-[450px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-6 sm:px-7 md:px-8 py-4 sm:py-5 md:py-6'
-            style={{
-              background:
-                'linear-gradient(180deg, var(--slate-800), var(--slate-900)'
-            }}
+            className='w-64 sm:w-[320px] md:w-[450px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 px-6 sm:px-7 md:px-8 py-4 sm:py-5 md:py-6 bg-gradient-to-b from-zinc-800 via-zinc-800 to-zinc-900'
             key={item.name}
           >
             <NextLink href={item.url}>

@@ -58,12 +58,12 @@ export default function IndexPage () {
                 <Card
                   key={key}
                   as='article'
-                  className='group w-8-cols bg-card/50 hover:bg-card/70 lg:w-4-cols rounded-3xl relative xxs:py-px xxs:px-0'
+                  className='group w-8-cols bg-gradient-to-tr from-black to-zinc-900 lg:w-4-cols rounded-3xl relative xxs:py-px xxs:px-0'
                 >
                   <span className='h-2 absolute inset-x-0 top-0 overflow-hidden rounded-full transition-[height] duration-300'>
                     <span className='absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(180,25,25,0.6)_0%,rgba(180,25,25,0)_75%)] opacity-50 transition-opacity duration-300 group-hover:opacity-100' />
                   </span>
-                  <div className='w-full h-full relative z-10 bg-card/20 group-hover:bg-card/10 rounded-3xl p-gutter transition-colors duration-300'>
+                  <div className='w-full h-full relative z-10 bg-zinc-900/20 group-hover:bg-zinc-900/10 rounded-3xl p-gutter transition-colors duration-300'>
                     <CardContent className='pt-spacing-5 pb-spacing-7 relative'>
                       {ServiceIcon
                         ? (
@@ -91,7 +91,6 @@ export default function IndexPage () {
                       )}
                     </CardHeader>
                   </div>
-                  <span className='absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/90 to-accent/0 transition-opacity duration-300 group-hover:opacity-60' />
                 </Card>
               )
             })}
@@ -146,7 +145,7 @@ export default function IndexPage () {
         <div className='container pt-spacing-7 md:pt-spacing-9 relative'>
           <div className='cols-container'>
             <div className='w-6-cols sm:w-8-cols lg:w-1/2-cols'>
-              <h2 className='f-subhead-3 font-medium text-muted-foreground'>
+              <h2 className='f-subhead-2 font-medium text-muted-foreground'>
                 {experience.title}
               </h2>
               {typeof experience.description === 'string'
@@ -191,13 +190,20 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center'>
+      <section className='bg-dot-white/[0.2] relative flex items-center justify-center'>
         <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
-        <div className='full-bleed-container pt-spacing-9 relative overflow-hidden'>
-          <h2 className='f-display-3 text-center'>
-            Nuestros clientes
-          </h2>
-          <div className='flex flex-col antialiased items-center justify-center relative overflow-hidden mt-spacing-6'>
+        <div className='w-full pt-spacing-9 relative overflow-hidden'>
+          <div className='container'>
+            <div className='max-w-sm sm:max-w-md text-center mx-auto'>
+              <h2 className='f-subhead-2 font-medium text-muted-foreground'>
+                Nuestros clientes
+              </h2>
+              <p className='f-display-3 mt-spacig-4 text-balance'>
+                Nos asociamos con los mejores
+              </p>
+            </div>
+          </div>
+          <div className='full-bleed-container flex flex-col antialiased items-center justify-center overflow-hidden mt-spacing-6'>
             <MovingCards
               items={clients}
               direction='right'
