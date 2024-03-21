@@ -19,7 +19,7 @@ export const whatsappUrl = `https://wa.me/${contactPhone}`
 export const whatsappEmergencyUrl = `https://wa.me/${emergencyPhone}`
 
 export const address: Omit<NavItemExternal, 'image'> = {
-  name: 'Adolfo Lopez Mateo #30 Int. #53 Desarrollo San Pablo 76125, Querétaro, Qro.',
+  name: 'Adolfo Lopez Mateo #30 Int. #53 San Pablo 76125, Querétaro, Qro.',
   url: 'https://maps.app.goo.gl/vYhLgEPpgrHg6Csr8'
 }
 
