@@ -170,9 +170,18 @@ export default function SiteHeader () {
           </div>
         </div>
       </motion.div>
-      <div className='w-14 h-14 bg-background border rounded-full grid place-content-center lg:hidden fixed bottom-gutter right-gutter z-50'>
+      <motion.div
+        initial={{ y: 100 }}
+        animate={{ y: visible || isMenuOpen ? 0 : 100 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.3,
+          type: 'keyframes'
+        }}
+        className='w-14 h-14 bg-background border rounded-full grid place-content-center lg:hidden fixed bottom-gutter right-gutter z-50'
+      >
         <WhatsappMenu />
-      </div>
+      </motion.div>
     </>
   )
 }
