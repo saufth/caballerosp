@@ -12,7 +12,7 @@ const buttonVariants = cva(
         primary: 'text-primary-foreground',
         secondary: 'text-secondary-foreground',
         accent: 'text-accent',
-        muted: 'text-muted-foreground',
+        muted: 'text-muted-foreground hover:text-foreground transition-colors duration-300',
         destructive: 'text-destructive-foreground'
       },
       size: {

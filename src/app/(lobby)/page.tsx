@@ -200,7 +200,7 @@ export default function IndexPage () {
         <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
         <div className='w-full py-spacing-9 relative overflow-hidden'>
           <div className='container'>
-            <p className='f-heading-2 text-balance text-center'>
+            <p className='f-heading-1 text-balance text-center'>
               Nos asociamos con los mejores
             </p>
           </div>
