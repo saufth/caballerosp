@@ -13,14 +13,14 @@ export default function SiteFooter () {
   return (
     <footer className='border-b-[6px] border-b-accent border-t'>
       <div className='container'>
-        <div className='cols-container gap-y-spacing-7 py-spacing-7'>
+        <div className='cols-container gap-y-spacing-6 py-spacing-7'>
           <div className='w-6-cols sm:w-2/3-cols flex flex-col gap-y-spacing-4'>
             <Link
               href={whatsappUrl}
               target='_blank'
               rel='noreferrer'
               aria-label='Whatsapp de atención al cliente, se abre en una nueva pestaña'
-              className='f-heading-3 flex gap-x-2 items-center'
+              className='f-subhead-2 flex gap-x-2 items-center'
             >
               <Icons.WhatsappOutlined className='w-auto h-6 lg:h-8' />
               <span className='sr-only'>Teléfono de emergencias{' '}</span>
@@ -31,7 +31,7 @@ export default function SiteFooter () {
               target='_blank'
               rel='noreferrer'
               aria-label='Abre la ubicación del corporativo en Google Maps, se abre en una nueva pestaña o en tu aplicación de mapas predeterminada'
-              className='f-subhead-1 sm:f-heading-3 text-balance'
+              className='f-subhead-1 sm:f-subhead-2 text-balance'
             >
               {address.name}
             </Link>
@@ -40,13 +40,13 @@ export default function SiteFooter () {
               target='_blank'
               rel='noreferrer'
               aria-label='Envía un mensaje con tu servicio de correo, se abre en una nueva pestaña o en tu cliente de correo predeterminado'
-              className='f-subhead-2 sm:f-heading-3'
+              className='text-lg sm:f-heading-3'
             >
               {contactEmail}
             </Link>
           </div>
           <nav className='w-6-cols sm:w-1/3-cols' aria-label='Navegación'>
-            <div className='text-lg sm:text-xl font-medium'>
+            <div className='text-lg sm:text-xl text-muted-foreground font-medium'>
               Navegación
             </div>
             <ul className='space-y-spacing-3 mt-spacing-4'>
@@ -54,7 +54,6 @@ export default function SiteFooter () {
                 <li key={key}>
                   <Link
                     href={item.href}
-                    variant='muted'
                     aria-label={item.title}
                     className='text-lg sm:text-xl font-medium'
                   >
