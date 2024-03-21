@@ -73,4 +73,4 @@ export interface SiteConfig {
   mainNav: MainNavItem[]
 }
 
-export type ItemExternal = Pick<SiteConfig, 'name' | 'url'> & Pick<Item, 'image'>
+export type NavItemExternal = Pick<SiteConfig, 'name' | 'url'> & Pick<Item, 'image'>

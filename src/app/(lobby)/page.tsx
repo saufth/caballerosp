@@ -1,13 +1,19 @@
 import Image from 'next/image'
 import Hero from '@/components/sections/hero'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { CallToAction, CallToContact } from '@/components/call-to-action'
 import { Icons } from '@/components/icons'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
-import { CallToAction, CallToContact } from '@/components/call-to-action'
+import { ClientsCards } from '@/components/cards/clients-cards'
 import { formatPhoneNumber } from '@/lib/utils'
-import { clients, emergencyPhone, experience, services, whatsappEmergencyUrl } from '@/config/organization'
+import {
+  clients,
+  emergencyPhone,
+  experience,
+  services,
+  whatsappEmergencyUrl
+} from '@/config/organization'
 import { siteConfig } from '@/config/site'
-import { MovingCards } from '@/components/cards/moving-card'
 
 const servicesIcons = [
   Icons.Instalations,
@@ -192,19 +198,14 @@ export default function IndexPage () {
       </section>
       <section className='bg-dot-white/[0.2] relative flex items-center justify-center'>
         <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
-        <div className='w-full pt-spacing-9 relative overflow-hidden'>
+        <div className='w-full py-spacing-9 relative overflow-hidden'>
           <div className='container'>
-            <div className='max-w-sm sm:max-w-md text-center mx-auto'>
-              <h2 className='f-subhead-2 font-medium text-muted-foreground'>
-                Nuestros clientes
-              </h2>
-              <p className='f-display-3 mt-spacig-4 text-balance'>
-                Nos asociamos con los mejores
-              </p>
-            </div>
+            <p className='f-heading-2 text-balance text-center'>
+              Nos asociamos con los mejores
+            </p>
           </div>
           <div className='full-bleed-container flex flex-col antialiased items-center justify-center overflow-hidden mt-spacing-6'>
-            <MovingCards
+            <ClientsCards
               items={clients}
               direction='right'
               speed='slow'

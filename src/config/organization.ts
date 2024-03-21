@@ -3,7 +3,7 @@ import {
   type Category,
   type Article,
   type Section,
-  type ItemExternal
+  type NavItemExternal
 } from '@/types'
 
 export const slogan = 'Que nada te detenga'
@@ -18,7 +18,10 @@ export const whatsappUrl = `https://wa.me/${contactPhone}`
 
 export const whatsappEmergencyUrl = `https://wa.me/${emergencyPhone}`
 
-export const location = 'Adolfo Lopez Mateo #30 Int.53 San Pablo 76125, Querétaro, Qro.'
+export const address: Omit<NavItemExternal, 'image'> = {
+  name: 'Adolfo Lopez Mateo #30 Int. #53 Desarrollo San Pablo 76125, Querétaro, Qro.',
+  url: 'https://maps.app.goo.gl/vYhLgEPpgrHg6Csr8'
+}
 
 export const services: Category[] = [
   {
@@ -210,7 +213,7 @@ export const experience: Article = {
   ]
 }
 
-export const clients: ItemExternal[] = [
+export const clients: NavItemExternal[] = [
   {
     name: 'Aceway',
     url: 'https://aceway.mx/',
