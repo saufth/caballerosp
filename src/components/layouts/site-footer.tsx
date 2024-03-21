@@ -13,8 +13,8 @@ export default function SiteFooter () {
   return (
     <footer className='border-b-[6px] border-b-accent border-t'>
       <div className='container'>
-        <div className='cols-container gap-y-spacing-6 py-spacing-7'>
-          <div className='w-6-cols sm:w-2/3-cols flex flex-col gap-y-spacing-4'>
+        <div className='cols-container gap-y-spacing-7 py-spacing-7'>
+          <div className='w-6-cols sm:w-5-cols lg:w-9-cols flex flex-col gap-y-spacing-4'>
             <Link
               href={whatsappUrl}
               target='_blank'
@@ -45,8 +45,8 @@ export default function SiteFooter () {
               {contactEmail}
             </Link>
           </div>
-          <nav className='w-6-cols sm:w-1/3-cols' aria-label='Navegación'>
-            <div className='text-lg sm:text-xl text-muted-foreground font-medium'>
+          <nav className='w-6-cols sm:w-3-cols lg:w-3-cols' aria-label='Navegación'>
+            <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
               Navegación
             </div>
             <ul className='space-y-spacing-3 mt-spacing-4'>
@@ -64,10 +64,13 @@ export default function SiteFooter () {
             </ul>
           </nav>
         </div>
-        <div className='pb-spacing-6 sm:pt-spacing-6'>
-          <span className='text-muted-foreground sm:text-lg lg:text-xl font-medium'>
+        <div className='pb-spacing-6 sm:pt-spacing-6 flex flex-col gap-y-spacing-3 sm:flex-row justify-between'>
+          <div className='text-muted-foreground text-lg lg:text-xl font-medium order-2 sm:order-1'>
             {`${siteConfig.name} © ${new Date().getFullYear()}`}
-          </span>
+          </div>
+          <div className='text-muted-foreground text-lg lg:text-xl font-medium order-1 sm:order-2'>
+            Política de privacidad
+          </div>
         </div>
       </div>
     </footer>
