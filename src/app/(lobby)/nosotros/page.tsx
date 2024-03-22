@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import { type Metadata } from 'next'
 import Hero from '@/components/sections/hero'
-import { culture, filosophy } from '@/config/organization'
-import { siteConfig } from '@/config/site'
-import { type Heading } from '@/types'
+import { CallToContact } from '@/components/call-to-action'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Icons } from '@/components/icons'
-import { CallToContact } from '@/components/call-to-action'
+import { siteConfig } from '@/config/site'
+import { culture, filosophy, ourHistory } from '@/config/organization'
+import { type Heading } from '@/types'
 
 const aboutHeading: Heading = {
   title: 'Un solo equipo. Somos familia.',
@@ -168,6 +168,22 @@ export default function AboutPage () {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className='container py-spacing-9'>
+          <h2>
+            <span className='f-heading-1 font-medium text-gradient'>
+              {ourHistory.title}
+            </span>
+          </h2>
+          <div>
+            {ourHistory.items.map((item, key) => (
+              <p key={key} className='mt-spacing-4 f-heading-3 text-balance'>
+                {item}
+              </p>
+            ))}
           </div>
         </div>
       </section>

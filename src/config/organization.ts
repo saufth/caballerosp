@@ -457,7 +457,7 @@ export const culture: Section = {
   ]
 }
 
-export const history: Article = {
+export const ourHistory: Article = {
   title: 'Nuestra razón de ser',
   items: [
     'La cultura organizacional es el pilar de nuestro éxito y de la calidad que garantizamos en nuestros servicios. En esta empresa lo más importante son las personas y nos enfocamos en su bienestar y crecimiento personal antes que profesional, con la firme creencia de que este último resultará como consecuencia de un equilibrio entre la persona y su entorno.',
