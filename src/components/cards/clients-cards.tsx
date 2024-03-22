@@ -97,17 +97,19 @@ export const ClientsCards = ({
                   aria-hidden='true'
                   className='user-select-none -z-[1] pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'
                 />
-                <span className='relative z-20'>
-                  <Image
-                    src={item.image.src}
-                    alt={item.image.alt}
-                    width={item.image.width}
-                    height={item.image.height}
-                    sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
-                    loading='lazy'
-                    className='w-24 sm:w-28 md:w-[150px] h-auto'
-                  />
-                </span>
+                {item.image && (
+                  <span className='relative z-20'>
+                    <Image
+                      src={item.image.src}
+                      alt={item.image.alt}
+                      width={item.image.width}
+                      height={item.image.height}
+                      sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                      loading='lazy'
+                      className='w-24 sm:w-28 md:w-[150px] h-auto'
+                    />
+                  </span>
+                )}
                 <div className='relative z-20 mt-6'>
                   <div className='md:text-lg leading-[1.6] text-slate-300 flex justify-end items-center gap-x-2'>
                     {item.name}

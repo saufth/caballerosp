@@ -17,10 +17,21 @@ export const whatsappUrl = `https://wa.me/${contactPhone}`
 
 export const whatsappEmergencyUrl = `https://wa.me/${emergencyPhone}`
 
-export const address: Omit<NavItemExternal, 'image'> = {
+export const address: NavItemExternal = {
   name: 'Adolfo Lopez Mateo #30 Int. #53 San Pablo 76125, Querétaro, Qro.',
   url: 'https://maps.app.goo.gl/vYhLgEPpgrHg6Csr8'
 }
+
+export const socialMedia: NavItemExternal[] = [
+  {
+    name: 'Facebook',
+    url: 'https://fb.com/CaballeroSolutions'
+  },
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com/caballero.solutions.power'
+  }
+]
 
 export const services: Category[] = [
   {

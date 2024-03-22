@@ -1,6 +1,8 @@
 import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
 
-export interface Title { title: string }
+export interface Title {
+  title: string
+}
 
 export interface Description {
   description: string | string[]
@@ -71,4 +73,4 @@ export interface SiteConfig {
   mainNav: MainNavItem[]
 }
 
-export type NavItemExternal = Pick<SiteConfig, 'name' | 'url'> & Pick<Item, 'image'>
+export type NavItemExternal = Pick<SiteConfig, 'name' | 'url'> & Partial<ImageData>

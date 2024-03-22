@@ -1,13 +1,11 @@
 'use client'
 import { useState } from 'react'
 import NextLink from '@/components/ui/next-link'
-import { ArrowRightIcon } from '@radix-ui/react-icons'
 import { CallToContact } from '@/components/call-to-action'
 import { Icons } from '@/components/icons'
-import { Link } from '@/components/ui/link'
+import Menu from '@/components/layouts/menu'
 import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { contactEmail } from '@/config/organization'
 import { siteConfig } from '@/config/site'
 
 export default function SiteHeader () {
@@ -62,21 +60,8 @@ export default function SiteHeader () {
                 </NextLink>
               </div>
               <div className='flex items-center gap-x-5'>
-                <div className='hidden lg:flex items-center gap-x-5'>
-                  <ul className='flex items-center gap-x-5 pr-1'>
-                    {siteConfig.mainNav.map((navItem, key) => (
-                      <li key={key} className='first:hidden last:hidden'>
-                        <Link href={navItem.href}>
-                          {navItem.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                  <WhatsappMenu />
-                  <CallToContact />
-                </div>
-                <div className='block lg:hidden'>
-                  <button className='block lg:hidden w-9 h-2.5 relative' onClick={toggleMenu}>
+                <div className='pr-2 flex'>
+                  <button className='w-9 h-2.5 relative' onClick={toggleMenu}>
                     <motion.span
                       initial={{
                         backgroundColor: 'oklch(var(--foreground))',
@@ -116,6 +101,10 @@ export default function SiteHeader () {
                     <span className='sr-only'>Toggle menu</span>
                   </button>
                 </div>
+                <div className='hidden lg:flex items-center gap-x-5'>
+                  <WhatsappMenu />
+                  <CallToContact />
+                </div>
               </div>
             </div>
           </div>
@@ -141,50 +130,8 @@ export default function SiteHeader () {
         }}
         className='w-full bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-hidden'
       >
-        <ul className='container mt-spacing-8'>
-          {siteConfig.mainNav.map((navItem, key) => {
-            return navItem.items
-              ? navItem.items.map((navItem, key) => (
-                <li key={key} className='border-b-[1.5px] first:border-t-[1.5px]'>
-                  <Link
-                    className='flex justify-between text-lg rounded-none w-full px-0 py-2.5 sm:py-2.5'
-                    href={navItem.href}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {navItem.title}
-                    <ArrowRightIcon className='w-5 h-5' />
-                  </Link>
-                </li>
-              ))
-              : (
-                <li key={key} className='border-b-[1.5px] first:border-t-[1.5px]'>
-                  <Link
-                    className='flex justify-between text-lg rounded-none w-full px-0 py-2.5 sm:py-2.5'
-                    href={navItem.href}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {navItem.title}
-                    <ArrowRightIcon className='w-5 h-5' />
-                  </Link>
-                </li>)
-          })}
-        </ul>
-        <div className='container pb-8'>
-          <div>
-            <div className='sm:text-lg text-muted-foreground font-medium'>
-              Correo electrónico
-            </div>
-            <Link
-              href={`mailto:${contactEmail}`}
-              target='_blank'
-              size='lg'
-              rel='noreferrer'
-              aria-label='Envía un mensaje con tu servicio de correo, se abre en una nueva pestaña o en tu cliente de correo predeterminado'
-              className='w-fit'
-            >
-              {contactEmail}
-            </Link>
-          </div>
+        <div className='container mt-spacing-8 md:mt-spacing-9'>
+          <Menu />
         </div>
       </motion.div>
       <motion.div

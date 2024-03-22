@@ -19,7 +19,7 @@ const buttonVariants = cva(
         default: '',
         xs: 'text-xs lg:text-sm',
         sm: 'text-sm lg:text-base',
-        lg: 'f-subhead-3 font-medium',
+        lg: 'f-subhead-2 font-medium',
         xl: 'f-subhead-1 font-medium',
         '2xl': 'f-subhead-2 font-medium'
       }
