@@ -1,11 +1,22 @@
 import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
 import { services } from '@/config/organization'
-import { type SiteConfig, type MainNavItem } from '@/types'
+import { type SiteConfig, type MainNavItem, type NavItem } from '@/types'
 
 export const author: Author = {
   name: 'saufth',
   url: 'https://github.com/saufth'
 }
+
+export const socialMedia: NavItem[] = [
+  {
+    title: 'facebook',
+    href: 'https://fb.com/CaballeroSolutions'
+  },
+  {
+    title: 'instagram',
+    href: 'https://instagram.com/caballero.solutions.power'
+  }
+]
 
 export const siteNav: MainNavItem[] = [
   {

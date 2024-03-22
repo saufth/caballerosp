@@ -22,17 +22,6 @@ export const address: NavItemExternal = {
   url: 'https://maps.app.goo.gl/vYhLgEPpgrHg6Csr8'
 }
 
-export const socialMedia: NavItemExternal[] = [
-  {
-    name: 'Facebook',
-    url: 'https://fb.com/CaballeroSolutions'
-  },
-  {
-    name: 'Instagram',
-    url: 'https://instagram.com/caballero.solutions.power'
-  }
-]
-
 export const services: Category[] = [
   {
     title: 'Instalaciones eléctricas',

@@ -7,7 +7,8 @@ import {
   contactPhone,
   whatsappUrl
 } from '@/config/organization'
-import { siteConfig } from '@/config/site'
+import { siteConfig, socialMedia } from '@/config/site'
+import SocialNav from './social-nav'
 
 const servicesLink = siteConfig.mainNav.find(({ title }) => title === 'Nuestras soluciones')!
 
@@ -50,6 +51,7 @@ export default function Menu ({ action }: { action?: () => void }) {
         >
           {contactEmail}
         </Link>
+        <SocialNav items={socialMedia} action={action} />
       </div>
       <nav
         className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col md:flex-row lg:justify-around gap-spacing-6 lg:gap-gutter order-1 lg:order-2'

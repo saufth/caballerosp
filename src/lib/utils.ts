@@ -18,6 +18,10 @@ export function absoluteUrl (path: string = '/') {
   return `${siteConfig.url}${path}`
 }
 
+export const capitalize = (text: string): string => (
+  `${text.charAt(0).toUpperCase()}${text.slice(1).toLowerCase()}`
+)
+
 export function formatPhoneNumber (str: string) {
   const cleaned = ('' + str).replace(/\D/g, '')
   const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
