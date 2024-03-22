@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import { type Metadata } from 'next'
 import Hero from '@/components/sections/hero'
-import { culture } from '@/config/organization'
+import { culture, filosophy } from '@/config/organization'
 import { siteConfig } from '@/config/site'
 import { type Heading } from '@/types'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Icons } from '@/components/icons'
+import { CallToContact } from '@/components/call-to-action'
 
 const aboutHeading: Heading = {
   title: 'Más que equipo. Somos familia.',
@@ -112,6 +113,61 @@ export default function AboutPage () {
                 </Card>
               )
             })}
+          </div>
+        </div>
+      </section>
+      <section className='bg-dot-white/[0.2] relative flex items-center justify-center'>
+        <div className='absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
+        <div className='container pt-spacing-7 md:pt-spacing-9 relative'>
+          <div className='cols-container'>
+            <div className='w-6-cols sm:w-8-cols lg:w-1/2-cols'>
+              <h2 className='f-subhead-2 font-medium text-muted-foreground'>
+                {filosophy.title}
+              </h2>
+              {typeof filosophy.description === 'string'
+                ? (
+                  <p className='f-heading-1 mt-spacing-4 text-balance'>
+                    {filosophy.description}
+                  </p>
+                  )
+                : filosophy.description && (
+                  <div className='mt-spacing-4 space-y-spacing-3'>
+                    {filosophy.description.map((paragraph, key) => (
+                      <p key={key} className='f-heading-1 text-balance'>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                )}
+              <div className='mt-spacing-6 space-y-spacing-5 pl-2 sm:pl-4'>
+                {filosophy.items.map((item, key) => (
+                  <article key={key}>
+                    <h3 className='f-subhead-2'>
+                      {item.title}
+                    </h3>
+                    <p className='f-subhead-2 text-muted-foreground mt-spacing-3'>
+                      {item.description}
+                    </p>
+                  </article>
+                ))}
+              </div>
+              <CallToContact className='mt-spacing-6' />
+            </div>
+            <div className='w-6-cols sm:w-8-cols lg:w-1/2-cols h-md sm:h-xl lg:h-[720px] mt-spacing-6 lg:mt-0 p-2 relative bg-card/40 border rounded-xl'>
+              <div className='w-full h-full relative rounded-sm overflow-hidden'>
+                <div className='aspect-video absolute inset-y-0 -left-1/2 xs:-left-1/4 md:left-0 lg:-left-1/2 mx-auto'>
+                  <Image
+                    src='/images/about-filosophy.webp'
+                    alt='Trabajador dando mantenimiento a una torre de alta tensión'
+                    width={1280}
+                    height={720}
+                    sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                    loading='lazy'
+                    className='aspect-video relative'
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

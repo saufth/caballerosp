@@ -416,16 +416,16 @@ export const clients: NavItemExternal[] = [
 ]
 
 export const filosophy: Section = {
-  title: 'Más que un equipo, somos una familia',
+  title: 'Nuestra filosofía',
   description: 'Nuestra filosofía y cultura organizacional contagia, impulsa y expone lo mejor de cada miembro del equipo.',
   items: [
     {
-      title: 'Nuestra misión',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi. Nulla nec purus feugiat, molestie ipsum et, consequat nunc.'
-    },
-    {
       title: 'Nuestra visión',
       description: 'Es posicionarnos como la mejor empresa de nuestro ramo a nivel regional, una de las mejores a nivel nacional y trascender fronteras para llegar a otros países.'
+    },
+    {
+      title: 'Nuestra misión',
+      description: '¡Ser felices!'
     }
   ]
 }
@@ -451,7 +451,7 @@ export const culture: Section = {
       description: 'Más que una organización, somos una familia, que respeta y entiende la personalidad de cada integrante, reconociendo sus virtudes y logros.'
     },
     {
-      title: 'Perfección',
+      title: 'Excelencia',
       description: 'Alcanzar el máximo nivel posible en todo lo que hacemos, tanto en el ámbito personal como profesional, bajo la premisa de que siempre es posible mejorar.'
     }
   ]
