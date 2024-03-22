@@ -142,18 +142,32 @@ export default function SiteHeader () {
         className='w-full bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-hidden'
       >
         <ul className='container mt-spacing-8'>
-          {siteConfig.mainNav.map((navItem, key) => (
-            <li key={key} className='border-b-[1.5px] first:border-t-[1.5px]'>
-              <Link
-                className='flex justify-between text-lg rounded-none w-full px-0 py-2.5 sm:py-2.5'
-                href={navItem.href}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {navItem.title}
-                <ArrowRightIcon className='w-5 h-5' />
-              </Link>
-            </li>
-          ))}
+          {siteConfig.mainNav.map((navItem, key) => {
+            return navItem.items
+              ? navItem.items.map((navItem, key) => (
+                <li key={key} className='border-b-[1.5px] first:border-t-[1.5px]'>
+                  <Link
+                    className='flex justify-between text-lg rounded-none w-full px-0 py-2.5 sm:py-2.5'
+                    href={navItem.href}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {navItem.title}
+                    <ArrowRightIcon className='w-5 h-5' />
+                  </Link>
+                </li>
+              ))
+              : (
+                <li key={key} className='border-b-[1.5px] first:border-t-[1.5px]'>
+                  <Link
+                    className='flex justify-between text-lg rounded-none w-full px-0 py-2.5 sm:py-2.5'
+                    href={navItem.href}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {navItem.title}
+                    <ArrowRightIcon className='w-5 h-5' />
+                  </Link>
+                </li>)
+          })}
         </ul>
         <div className='container pb-8'>
           <div>
@@ -175,7 +189,7 @@ export default function SiteHeader () {
       </motion.div>
       <motion.div
         initial={{ y: 100 }}
-        animate={{ y: visible || isMenuOpen ? 0 : 100 }}
+        animate={{ y: visible && !isMenuOpen ? 0 : 100 }}
         transition={{
           duration: 0.5,
           delay: 0.3,
