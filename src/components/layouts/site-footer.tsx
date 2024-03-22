@@ -50,7 +50,7 @@ export default function SiteFooter () {
               {contactEmail}
             </Link>
           </div>
-          <nav className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col sm:flex-row gap-spacing-6' aria-label='Navegación'>
+          <nav className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col md:flex-row lg:justify-around gap-spacing-6 lg:gap-gutter' aria-label='Navegación'>
             <div>
               <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
                 Navegación
