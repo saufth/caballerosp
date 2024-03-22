@@ -3,17 +3,18 @@ import BackgroundVideo from '@/components/background-video'
 import { CallToAction } from '@/components/call-to-action'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
-import { type HeadingWithOptionalDescription } from '@/types'
+import { type NavItem, type HeadingWithOptionalDescription } from '@/types'
 
 interface HeroProps extends HeadingWithOptionalDescription {
+  link: NavItem
   videoSrc?: string
 }
 
-export default function Hero ({ title, description, videoSrc }: HeroProps) {
+export default function Hero ({ title, description, link, videoSrc }: HeroProps) {
   return (
     <section className='screen-container -mt-[74px] lg:-mt-[96px] relative overflow-hidden border-t-[6px] border-accent'>
       <div className='container relative z-10 pt-28'>
-        <div className='max-w-[340px] sm:max-w-xl xl:max-w-5xl'>
+        <div className='max-w-[350px] sm:max-w-xl xl:max-w-4xl'>
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -70,15 +71,14 @@ export default function Hero ({ title, description, videoSrc }: HeroProps) {
             className='mt-spacing-6'
           >
             <CallToAction
-              href='/#soluciones'
-              className='group h-14 lg:h-[70px] overflow-hidden'
-              contentClassName='flex gap-x-spacing-6'
+              href={link.href}
+              size='lg'
+              className='group overflow-hidden'
+              contentClassName='flex gap-x-spacing-4'
             >
-              <span className='z-30 lg:text-lg text-primary-foreground'>
-                Soluciones
-              </span>
-              <div className='w-8 lg:w-11 h-8 lg:h-11 bg-accent rounded-full grid place-content-center relative z-20'>
-                <LightningBoltIcon className='w-4 h-4 lg:w-5 lg:h-5 relative z-10 [&_*]:fill-accent-foreground group-hover:scale-[1.3] transition-transform duration-500' />
+              {link.title}
+              <div className='w-7 md:w-8 h-7 md:h-8 bg-accent rounded-full grid place-content-center relative z-20'>
+                <LightningBoltIcon className='w-3.5 md:w-4 h-3.5 md:h-4 relative z-10 [&_*]:fill-accent-foreground group-hover:scale-[1.3] transition-transform duration-500' />
                 <div className='w-full h-full bg-accent/10 rounded-full absolute inset-0 -z-10 m-auto transition-transform duration-500 scale-0 group-hover:scale-[4]' />
               </div>
             </CallToAction>

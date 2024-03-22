@@ -160,7 +160,7 @@
   /* Typography */
 
   .f-display-1 {
-    @apply text-5xl sm:text-7xl xl:text-9xl leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em] xl:-tracking-[0.02em];
+    @apply text-5xl sm:text-7xl xl:text-8xl leading-[120%] sm:leading-[120%] xl:leading-[110%] -tracking-[0.01em] xl:-tracking-[0.02em];
   }
 
   .f-display-2 {

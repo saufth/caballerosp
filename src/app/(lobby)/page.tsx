@@ -27,6 +27,10 @@ export default function IndexPage () {
       <Hero
         title={siteConfig.description}
         description='Desde instalaciones en baja tensión hasta proyectos en alta tensión, nuestro equipo altamente capacitado y comprometido se encarga de cada detalle.'
+        link={{
+          title: 'Soluciones',
+          href: '/#soluciones'
+        }}
         videoSrc='/video/home-hero.mp4'
       />
       <section id='soluciones' className='bg-dot-white/[0.2] relative flex items-center justify-center'>

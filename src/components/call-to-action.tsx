@@ -44,7 +44,7 @@ const callToActionContentVariants = cva(
         default: 'px-6',
         xs: 'px-2',
         sm: 'px-4',
-        lg: 'px-8 font-medium',
+        lg: 'px-6 md:px-8 font-medium',
         icon: ''
       }
     },

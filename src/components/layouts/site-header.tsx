@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react'
 import NextLink from '@/components/ui/next-link'
+import Menu from '@/components/layouts/menu'
 import { CallToContact } from '@/components/call-to-action'
 import { Icons } from '@/components/icons'
-import Menu from '@/components/layouts/menu'
 import { WhatsappMenu } from '@/components/layouts/whatsapp-menu'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { siteConfig } from '@/config/site'
@@ -60,7 +60,7 @@ export default function SiteHeader () {
                 </NextLink>
               </div>
               <div className='flex items-center gap-x-5'>
-                <div className='pr-2 flex'>
+                <div className='lg:pr-2 flex'>
                   <button className='w-9 h-2.5 relative' onClick={toggleMenu}>
                     <motion.span
                       initial={{
@@ -131,7 +131,7 @@ export default function SiteHeader () {
         className='w-full bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-hidden'
       >
         <div className='container mt-spacing-8 md:mt-spacing-9'>
-          <Menu />
+          <Menu action={closeMenu} />
         </div>
       </motion.div>
       <motion.div
