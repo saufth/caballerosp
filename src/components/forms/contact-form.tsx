@@ -28,7 +28,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { type Inputs, contactEmailSchema } from '@/lib/validations/email'
 import { services } from '@/config/organization'
 
-const recaptchaSiteKey = String(process.env.NEXT_PUBLIC_RECAPTCHA_SITE || 'recapthca-site-not-found')
+const recaptchaSiteKey = String(process.env.NEXT_PUBLIC_GRECAPTCHA || 'recapthca-site-not-found')
 
 export default function ContactForm () {
   const [isPending, startTransition] = React.useTransition()

@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 import { z } from 'zod'
 import { contactEmailSchema } from '@/lib/validations/email'
 import { contactEmail } from '@/config/organization'
-import { domain, siteConfig } from '@/config/site'
+import { siteConfig } from '@/config/site'
 
 export async function POST (req: Request) {
   const input = contactEmailSchema.parse(await req.json())
@@ -13,8 +13,8 @@ export async function POST (req: Request) {
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: `noreply@${domain}`,
-        pass: String(process.env.GMAIL_APP_PASS)
+        user: `noreply@${process.env.DOMAIN}`,
+        pass: String(process.env.GOOGLE_APP)
       }
     })
 

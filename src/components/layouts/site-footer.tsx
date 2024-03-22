@@ -9,18 +9,21 @@ import {
 } from '@/config/organization'
 import { siteConfig } from '@/config/site'
 
+const servicesLink = siteConfig.mainNav.find(({ title }) => title === 'Nuestras soluciones')!
+
 export default function SiteFooter () {
   return (
     <footer className='border-b-[6px] border-b-accent border-t'>
       <div className='container'>
         <div className='cols-container gap-y-spacing-7 py-spacing-7'>
-          <div className='w-6-cols sm:w-5-cols lg:w-9-cols flex flex-col gap-y-spacing-4'>
+          <div className='w-6-cols sm:w-8-cols lg:w-5-cols xl:w-6-cols flex flex-col gap-y-spacing-4'>
             <Link
               href={whatsappUrl}
               target='_blank'
               rel='noreferrer'
+              size='xl'
               aria-label='Whatsapp de atención al cliente, se abre en una nueva pestaña'
-              className='f-subhead-2 flex gap-x-2 items-center'
+              className='w-fit flex gap-x-2 items-center'
             >
               <Icons.WhatsappOutlined className='w-auto h-6 lg:h-8' />
               <span className='sr-only'>Teléfono de emergencias{' '}</span>
@@ -30,38 +33,64 @@ export default function SiteFooter () {
               href={address.url}
               target='_blank'
               rel='noreferrer'
+              size='xl'
               aria-label='Abre la ubicación del corporativo en Google Maps, se abre en una nueva pestaña o en tu aplicación de mapas predeterminada'
-              className='f-subhead-1 sm:f-subhead-2 text-balance'
+              className='w-fit text-balance'
             >
               {address.name}
             </Link>
             <Link
               href={`mailto:${contactEmail}`}
               target='_blank'
+              size='lg'
               rel='noreferrer'
               aria-label='Envía un mensaje con tu servicio de correo, se abre en una nueva pestaña o en tu cliente de correo predeterminado'
-              className='text-lg sm:f-heading-3'
+              className='w-fit'
             >
               {contactEmail}
             </Link>
           </div>
-          <nav className='w-6-cols sm:w-3-cols lg:w-3-cols' aria-label='Navegación'>
-            <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
-              Navegación
+          <nav className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col sm:flex-row gap-spacing-6' aria-label='Navegación'>
+            <div>
+              <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
+                Navegación
+              </div>
+              <ul className='space-y-spacing-3 mt-spacing-4'>
+                {siteConfig.mainNav.map((navItem, key) => {
+                  return navItem.title !== 'Nuestras soluciones' && (
+                    <li key={key}>
+                      <Link
+                        href={navItem.href}
+                        aria-label={navItem.title}
+                        className='text-lg sm:text-xl font-medium'
+                      >
+                        {navItem.title}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
-            <ul className='space-y-spacing-3 mt-spacing-4'>
-              {siteConfig.mainNav.map((item, key) => (
-                <li key={key}>
-                  <Link
-                    href={item.href}
-                    aria-label={item.title}
-                    className='text-lg sm:text-xl font-medium'
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
+                Soluciones
+              </div>
+              <ul className='space-y-spacing-3 mt-spacing-4'>
+                {servicesLink.items!.map((navItem, key) => {
+                  return navItem.title !== 'Nuestras soluciones' && (
+                    <li key={key}>
+                      <Link
+                        href={navItem.href}
+                        aria-label={navItem.title}
+                        className='text-lg sm:text-xl font-medium'
+                      >
+                        {navItem.title}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
           </nav>
         </div>
         <div className='pb-spacing-6 sm:pt-spacing-6 flex flex-col gap-y-spacing-3 sm:flex-row justify-between'>

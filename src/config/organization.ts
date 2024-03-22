@@ -1,4 +1,3 @@
-import { domain } from '@/config/site'
 import {
   type Category,
   type Article,
@@ -8,7 +7,7 @@ import {
 
 export const slogan = 'Que nada te detenga'
 
-export const contactEmail = `contacto@${domain}`
+export const contactEmail = `contacto@${process.env.NEXT_PUBLIC_DOMAIN}`
 
 export const contactPhone = '4422432453'
 

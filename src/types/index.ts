@@ -38,12 +38,10 @@ export interface Nav {
 }
 
 export interface NavItemWithChildren extends NavItem {
-  items: NavItemWithChildren[]
+  items?: NavItemWithChildren[]
 }
 
-export type NavItemWithOptionalChildren = NavItem & Partial<Pick<NavItemWithChildren, 'items'>>
-
-export type MainNavItem = NavItemWithOptionalChildren
+export type MainNavItem = NavItemWithChildren
 
 export interface Item extends HeadingWithImageLabel {
   slug?: string

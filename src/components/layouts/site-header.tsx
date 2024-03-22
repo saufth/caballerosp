@@ -157,13 +157,16 @@ export default function SiteHeader () {
         </ul>
         <div className='container pb-8'>
           <div>
-            <div className='text-sm sm:text-base text-muted-foreground'>
+            <div className='sm:text-lg text-muted-foreground font-medium'>
               Correo electrónico
             </div>
             <Link
               href={`mailto:${contactEmail}`}
-              onClick={() => setIsMenuOpen(false)}
-              className='px-0 text-lg'
+              target='_blank'
+              size='lg'
+              rel='noreferrer'
+              aria-label='Envía un mensaje con tu servicio de correo, se abre en una nueva pestaña o en tu cliente de correo predeterminado'
+              className='w-fit'
             >
               {contactEmail}
             </Link>

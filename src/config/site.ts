@@ -1,4 +1,5 @@
 import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
+import { services } from '@/config/organization'
 import { type SiteConfig, type MainNavItem } from '@/types'
 
 export const author: Author = {
@@ -7,6 +8,11 @@ export const author: Author = {
 }
 
 export const siteNav: MainNavItem[] = [
+  {
+    title: 'Nuestras soluciones',
+    href: '/#soluciones',
+    items: services.map(({ title, slug }) => ({ title, href: slug! }))
+  },
   {
     title: 'Acerca de nosotros',
     href: '/nosotros'
@@ -17,12 +23,10 @@ export const siteNav: MainNavItem[] = [
   }
 ]
 
-export const domain = 'caballerosolutionspower.com'
-
 export const siteConfig: SiteConfig = {
   name: 'Caballero Solutions Power',
   description: 'Baja la tensión. Déjanos la alta.',
-  url: `https://${domain}`,
+  url: `https://${process.env.NEXT_PUBLIC_DOMAIN}`,
   author,
   mainNav: [
     {
