@@ -9,7 +9,7 @@ import { Icons } from '@/components/icons'
 import { CallToContact } from '@/components/call-to-action'
 
 const aboutHeading: Heading = {
-  title: 'Más que equipo. Somos familia.',
+  title: 'Un solo equipo. Somos familia.',
   description: 'Construimos relaciones estrechas con nuestros clientes. Ofrecemos pasión, talento, experiencia y compromiso para desarrollar cualquier proyecto que se nos asigne.'
 }
 
