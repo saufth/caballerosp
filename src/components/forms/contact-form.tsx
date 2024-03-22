@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { PaperPlaneIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
 import { Icons } from '@/components/icons'
 import { Input } from '@/components/ui/input'
@@ -23,12 +22,13 @@ import {
 } from '@/components/ui/select'
 import { toast } from 'sonner'
 import ReCAPTCHA from 'react-google-recaptcha'
+import { PaperPlaneIcon } from '@radix-ui/react-icons'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { type Inputs, contactEmailSchema } from '@/lib/validations/email'
 import { services } from '@/config/organization'
 
-const recaptchaSiteKey = String(process.env.NEXT_PUBLIC_GRECAPTCHA || 'recapthca-site-not-found')
+const recaptchaSitekey = String(process.env.NEXT_PUBLIC_RECAPTCHA_SITE)
 
 export default function ContactForm () {
   const [isPending, startTransition] = React.useTransition()
@@ -38,7 +38,7 @@ export default function ContactForm () {
     defaultValues: {
       name: '',
       email: '',
-      category: services[0]?.title || 'category-no-found',
+      category: services[0]!.title,
       subject: ''
     }
   })
@@ -64,7 +64,7 @@ export default function ContactForm () {
       if (!response.ok) {
         switch (response.status) {
           case 422:
-            toast.error('Algo salió mal. Revisa que los datos de entrada sean validos.')
+            toast.error('Entrada invalida.')
             break
           case 500:
             toast.error('Algo salió mal. Revisa que los datos que ingresaste o inténtalo de nuevo más tarde.')
@@ -93,14 +93,14 @@ export default function ContactForm () {
           name='name'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nombre de contacto</FormLabel>
-              <FormMessage />
+              <FormLabel>Nombre completo</FormLabel>
               <FormControl>
                 <Input
                   placeholder='Tu nombre completo'
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -109,14 +109,14 @@ export default function ContactForm () {
           name='email'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Correo de contacto</FormLabel>
-              <FormMessage />
+              <FormLabel>Correo electrónico</FormLabel>
               <FormControl>
                 <Input
                   placeholder='correo@ejemplo.com'
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -126,7 +126,6 @@ export default function ContactForm () {
           render={({ field }) => (
             <FormItem className='w-full'>
               <FormLabel>Categoría</FormLabel>
-              <FormMessage />
               <Select
                 value={field.value}
                 onValueChange={(value: typeof field.value) =>
@@ -145,7 +144,7 @@ export default function ContactForm () {
                           key={service.title}
                           value={service.title}
                           placeholder='Selecciona una categoría'
-                          className='hover:cursor-pointer group-hover:bg-secondary'
+                          className='rounded-sm hover:cursor-pointer group-hover:bg-secondary'
                         >
                           {service.title}
                         </SelectItem>
@@ -154,6 +153,7 @@ export default function ContactForm () {
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -162,42 +162,40 @@ export default function ContactForm () {
           name='subject'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Cuéntanos acerca de tu proyecto</FormLabel>
-              <FormMessage />
+              <FormLabel>Cuéntanos ¿Cómo podemos ayudarte?</FormLabel>
               <FormControl>
                 <Textarea
-                  className='resize-none ring-ring ring-1focus-visible:ring-ring'
+                  className='resize-none border-none ring-ring ring-1focus-visible:ring-ring'
                   rows={4}
                   placeholder='Cuéntanos ¿Cómo podemos ayudarte?'
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
         <div className='flex'>
           <ReCAPTCHA
             ref={recaptchaRef}
-            sitekey={recaptchaSiteKey}
+            sitekey={recaptchaSitekey}
           />
         </div>
-        <div className='pt-spacing-3'>
-          <Button
-            variant='secondary'
-            size='full'
-            disabled={isPending}
-          >
-            {isPending
-              ? (
-                <span className='flex items-center gap-x-2 text-secondary-foreground'>
-                  Enviando <Icons.Spinner className='h-4 w-4 fill-secondary-foreground' aria-hidden='true' />
-                </span>)
-              : (
-                <span className='flex items-center gap-x-2 text-secondary-foreground'>
-                  Enviar <PaperPlaneIcon className='h-3.5 w-3.5 [&_*]:fill-secondary-foreground' aria-hidden='true' />
-                </span>)}
-          </Button>
-        </div>
+        <Button
+          className='[&>*]:text-primary-foreground'
+          size='full'
+          disabled={isPending}
+        >
+          {isPending
+            ? (
+              <span className='flex items-center gap-x-2'>
+                Enviando <Icons.Spinner className='h-3 w-3' aria-hidden='true' />
+              </span>)
+            : (
+              <span className='flex items-center gap-x-2'>
+                Enviar <PaperPlaneIcon className='h-3 w-3 [&>*]:fill-primary-foreground' aria-hidden='true' />
+              </span>)}
+        </Button>
       </form>
     </Form>
   )

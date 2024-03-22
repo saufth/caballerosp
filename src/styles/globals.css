@@ -24,7 +24,7 @@
     --destructive: 39.59% 0.133 25.72; /* #7F1D1D */
     --destructive-foreground: 98.48% 0 0; /* #FAFAFA */
     --border: 31.91% 0.003 17.31; /* #343232 */
-    --input: 98.48% 0 0; /* #FAFAFA */
+    --input: 23% 0.004 106.69; /* #1D1D1B */
     --ring: 87.09% 0.005 286.29; /* #D4D4D8 */
     --radius: 1rem;
     /* Shell */
@@ -116,7 +116,7 @@
     --destructive: 39.59% 0.133 25.72; /* #7F1D1D */
     --destructive-foreground: 98.48% 0 0; /* #FAFAFA */
     --border: 31.91% 0.003 17.31; /* #343232 */
-    --input: 98.48% 0 0; /* #FAFAFA */
+    --input: 23% 0.004 106.69; /* #1D1D1B */
     --ring: 87.09% 0.005 286.29; /* #D4D4D8 */
   }
 }
