@@ -172,7 +172,7 @@ export default function AboutPage () {
         </div>
       </section>
       <section>
-        <div className='container py-spacing-9'>
+        <div className='container py-spacing-7'>
           <h2 className='f-heading-1 font-medium'>
             {ourHistory.title}
           </h2>
