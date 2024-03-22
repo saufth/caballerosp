@@ -173,18 +173,14 @@ export default function AboutPage () {
       </section>
       <section>
         <div className='container py-spacing-9'>
-          <h2>
-            <span className='f-heading-1 font-medium text-gradient'>
-              {ourHistory.title}
-            </span>
+          <h2 className='f-heading-1 font-medium'>
+            {ourHistory.title}
           </h2>
-          <div>
-            {ourHistory.items.map((item, key) => (
-              <p key={key} className='mt-spacing-4 f-heading-3 text-balance'>
-                {item}
-              </p>
-            ))}
-          </div>
+          {ourHistory.items.map((item, key) => (
+            <p key={key} className='f-heading-3 text-balance mt-spacing-4'>
+              {item}
+            </p>
+          ))}
         </div>
       </section>
     </>
