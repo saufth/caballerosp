@@ -432,10 +432,7 @@ export const filosophy: Section = {
 
 export const culture: Section = {
   title: '¿Por qué Caballero?',
-  description: [
-    'Construimos relaciones estrechas con nuestros clientes. Nuestros servicios se sustentan con nuestros valores.',
-    'Ofrecemos pasión, talento, experiencia y compromiso para desarrollar cualquier proyecto que se nos asigne. Nos debemos y agradecemos a cada cliente que nos brinda la confianza de ser su soporte y proveedor.'
-  ],
+  description: 'Nuestros servicios se sustentan con nuestros valores. Garantizamos excelencia en cada detalle.',
   items: [
     {
       title: 'Lealtad',
