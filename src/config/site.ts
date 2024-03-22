@@ -20,7 +20,7 @@ export const socialMedia: NavItem[] = [
 
 export const siteNav: MainNavItem[] = [
   {
-    title: 'Nuestras soluciones',
+    title: 'Soluciones',
     href: '/#soluciones',
     items: services.map(({ title, slug }) => ({ title, href: slug! }))
   },

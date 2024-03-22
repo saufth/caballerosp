@@ -10,11 +10,11 @@ import {
 import { siteConfig, socialMedia } from '@/config/site'
 import SocialNav from './social-nav'
 
-const servicesLink = siteConfig.mainNav.find(({ title }) => title === 'Nuestras soluciones')!
+const servicesLink = siteConfig.mainNav.find(({ title }) => title === 'Soluciones')!
 
 export default function Menu ({ action }: { action?: () => void }) {
   return (
-    <div className='cols-container gap-y-spacing-7'>
+    <div className='cols-container gap-y-spacing-6'>
       <div className='w-6-cols sm:w-8-cols lg:w-5-cols xl:w-6-cols flex flex-col gap-y-spacing-4 order-2 lg:order-1'>
         <Link
           href={whatsappUrl}
@@ -55,7 +55,7 @@ export default function Menu ({ action }: { action?: () => void }) {
       </div>
       <nav
         className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col md:flex-row lg:justify-around gap-spacing-6 lg:gap-gutter order-1 lg:order-2'
-        aria-label='Navegación'
+        aria-label={`${siteConfig.name} directorio`}
       >
         <div>
           <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
@@ -63,7 +63,7 @@ export default function Menu ({ action }: { action?: () => void }) {
           </div>
           <ul className='space-y-spacing-3 mt-spacing-4'>
             {siteConfig.mainNav.map((navItem, key) => {
-              return navItem.title !== 'Nuestras soluciones' && (
+              return navItem.title !== 'Soluciones' && (
                 <li key={key}>
                   <Link
                     href={navItem.href}
@@ -80,11 +80,11 @@ export default function Menu ({ action }: { action?: () => void }) {
         </div>
         <div>
           <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
-            Soluciones
+            {servicesLink.title}
           </div>
           <ul className='space-y-spacing-3 mt-spacing-4'>
             {servicesLink.items!.map((navItem, key) => {
-              return navItem.title !== 'Nuestras soluciones' && (
+              return navItem.title !== '' && (
                 <li key={key}>
                   <Link
                     href={navItem.href}
