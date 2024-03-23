@@ -26,7 +26,7 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { type Inputs, contactEmailSchema } from '@/lib/validations/email'
-import { services } from '@/config/organization'
+import { services } from '@/config/services'
 
 const recaptchaSitekey = String(process.env.NEXT_PUBLIC_RECAPTCHA_SITE)
 

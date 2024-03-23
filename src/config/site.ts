@@ -1,6 +1,6 @@
 import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
-import { services } from '@/config/organization'
-import { type SiteConfig, type MainNavItem, type NavItem } from '@/types'
+import { services } from '@/config/services'
+import { type SiteConfig, type MainNavItem, type NavItem, NavItemWithChildren } from '@/types'
 
 export const author: Author = {
   name: 'saufth',
@@ -18,11 +18,13 @@ export const socialMedia: NavItem[] = [
   }
 ]
 
+const servicesNav: NavItemWithChildren[] = services.map(({ title, slug }) => ({ title, href: slug! }))
+
 export const siteNav: MainNavItem[] = [
   {
     title: 'Soluciones',
     href: '/#soluciones',
-    items: services.map(({ title, slug }) => ({ title, href: slug! }))
+    items: servicesNav
   },
   {
     title: 'Acerca de nosotros',

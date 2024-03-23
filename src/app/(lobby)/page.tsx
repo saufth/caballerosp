@@ -10,9 +10,9 @@ import {
   clients,
   emergencyPhone,
   experience,
-  services,
   whatsappEmergencyUrl
 } from '@/config/organization'
+import { services } from '@/config/services'
 import { siteConfig } from '@/config/site'
 
 const servicesIcons = [

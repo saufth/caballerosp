@@ -6,8 +6,8 @@ import { Toaster } from '@/components/ui/toaster'
 import GoogleSearchScript from '@/components/layouts/google-seacrch-script'
 import { cn } from '@/lib/utils'
 import { fontSans } from '@/lib/fonts'
+import { services } from '@/config/services'
 import { siteConfig } from '@/config/site'
-import { services } from '@/config/organization'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
