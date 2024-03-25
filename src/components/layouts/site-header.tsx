@@ -40,7 +40,7 @@ export default function SiteHeader () {
         animate={{ y: visible || isMenuOpen ? 0 : -100 }}
         transition={{
           duration: 0.5,
-          delay: 0.3,
+          delay: 0.15,
           type: 'keyframes'
         }}
         className='w-full sticky top-0 left-0 z-40'
@@ -139,7 +139,7 @@ export default function SiteHeader () {
         animate={{ y: visible && !isMenuOpen ? 0 : 100 }}
         transition={{
           duration: 0.5,
-          delay: 0.3,
+          delay: 0.15,
           type: 'keyframes'
         }}
         className='w-14 h-14 bg-background border rounded-full grid place-content-center lg:hidden fixed bottom-gutter right-gutter z-50'
