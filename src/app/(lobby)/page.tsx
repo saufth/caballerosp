@@ -50,9 +50,9 @@ export default function IndexPage () {
               <div className='bg-card/40 rounded-3xl p-2 border'>
                 <Image
                   src='/images/home-solutions.webp'
-                  alt='Trabajadores dando mantenimiento a una torre de alta tensión'
-                  width={1280}
-                  height={720}
+                  alt='Trabajadores instalando a una torre de alta tensión'
+                  width={1920}
+                  height={1080}
                   sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                   loading='lazy'
                   className='w-full rounded-xl'
@@ -101,6 +101,7 @@ export default function IndexPage () {
                       )}
                     </CardHeader>
                   </div>
+                  <span className='absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/70 to-accent/0 transition-opacity duration-500 group-hover:opacity-60' />
                 </Card>
               )
             })}

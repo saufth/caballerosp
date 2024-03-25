@@ -5,6 +5,12 @@ export const services: Category[] = [
     title: 'Instalaciones eléctricas',
     description: 'Instalaciones eficientes y de alta calidad. Aseguramos un abastecimiento óptimo de energía eléctrica.',
     slug: '/instalaciones-electricas',
+    image: {
+      src: '/images/instalations-service.webp',
+      alt: 'Trabajador sobre una torre de alta tensión',
+      width: 1280,
+      height: 720
+    },
     items: [
       {
         title: 'Instalación de acometidas eléctricas'
@@ -31,6 +37,12 @@ export const services: Category[] = [
       {
         title: 'Mantenimiento eléctrico predictivo',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit..ipsum et, consequat nunc.',
+        image: {
+          src: '/images/maintenance-predictive-service.webp',
+          alt: 'Trabajador revisando una planta de energía eléctrica',
+          width: 1280,
+          height: 720
+        },
         items: [
           {
             title: 'Análisis de aceite de transformadores'
@@ -58,6 +70,12 @@ export const services: Category[] = [
       {
         title: 'Mantenimiento eléctrico preventivo',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat.',
+        image: {
+          src: '/images/maintenance-preventive-service.webp',
+          alt: 'Trabajador revisando una planta de energía eléctrica',
+          width: 1280,
+          height: 720
+        },
         items: [
           {
             title: 'Mantenimiento a plantas de energía'
@@ -85,6 +103,12 @@ export const services: Category[] = [
       {
         title: 'Mantenimiento eléctrico correctivo',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat.',
+        image: {
+          src: '/images/maintenance-corrective-service.webp',
+          alt: 'Trabajador revisando una planta de energía eléctrica',
+          width: 1280,
+          height: 720
+        },
         items: [
           {
             title: 'Cambio de equipo dañado'
@@ -112,6 +136,12 @@ export const services: Category[] = [
     title: 'Diseño e ingeniería eléctrica',
     description: 'Desarrollamos proyectos efecientes y seguros. Te ayudamos a construir el sistema ideal para tu infraestructura.',
     slug: '/diseno-ingenieria-electrica',
+    image: {
+      src: '/images/design-engineering-service.webp',
+      alt: 'Trabajador revisando una planta de energía eléctrica al aire libre',
+      width: 1920,
+      height: 1080
+    },
     items: [
       {
         title: 'Cuadro de carga'

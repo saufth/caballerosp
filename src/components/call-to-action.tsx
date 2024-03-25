@@ -88,7 +88,7 @@ const CallToAction = (
 )
 CallToAction.displayName = 'CallToAction'
 
-type CustomCallToAction = Pick<CallToActionProps, 'className' | 'ref' | 'variant' | 'size'>
+type CustomCallToAction = Pick<CallToActionProps, 'className' | 'ref' | 'variant' | 'size' | 'onClick'>
 
 const contactLink = siteConfig.mainNav.find(({ href }) => href === '/contacto')!
 

@@ -103,7 +103,7 @@ export default function SiteHeader () {
                 </div>
                 <div className='hidden lg:flex items-center gap-x-5'>
                   <WhatsappMenu />
-                  <CallToContact />
+                  <CallToContact onClick={closeMenu} />
                 </div>
               </div>
             </div>

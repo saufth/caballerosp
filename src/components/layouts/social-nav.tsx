@@ -8,23 +8,23 @@ import { siteConfig } from '@/config/site'
 export const socialIcons = [
   {
     title: 'facebook',
-    Icon: () => <Icons.Facebook className='w-7 h-7' />
+    Icon: () => <Icons.Facebook className='w-auto h-10' />
   },
   {
     title: 'instagram',
-    Icon: () => <Icons.Instagram className='w-7 h-7' />
+    Icon: () => <Icons.Instagram className='w-auto h-10' />
   },
   {
     title: 'tiktok',
-    Icon: () => <Icons.Tiktok className='w-7 h-7' />
+    Icon: () => <Icons.Tiktok className='w-auto h-10' />
   },
   {
     title: 'linkedin',
-    Icon: () => <Icons.Linkedin className='w-7 h-7' />
+    Icon: () => <Icons.Linkedin className='w-auto h-10' />
   },
   {
     title: 'whatsapp',
-    Icon: () => <Icons.Whatsapp className='w-[22px] h-[22px]' />
+    Icon: () => <Icons.Whatsapp className='w-auto h-9' />
   }
 ]
 
