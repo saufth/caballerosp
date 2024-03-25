@@ -1,8 +1,6 @@
-'use client'
 import BackgroundVideo from '@/components/background-video'
 import { CallToAction } from '@/components/call-to-action'
 import { LightningBoltIcon } from '@radix-ui/react-icons'
-import { motion } from 'framer-motion'
 import { type NavItem, type HeadingWithOptionalDescription } from '@/types'
 
 interface HeroProps extends HeadingWithOptionalDescription {
@@ -15,42 +13,21 @@ export default function Hero ({ title, description, link, videoSrc }: HeroProps)
     <section className='screen-container -mt-[74px] lg:-mt-[96px] relative overflow-hidden border-t-[6px] border-accent'>
       <div className='container relative z-10 pt-28'>
         <div className='max-w-[350px] sm:max-w-xl xl:max-w-4xl'>
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 1,
-              delay: 1,
-              type: 'tween'
-            }}
+          <h1
             className='f-display-1 text-balance'
           >
             {title}
-          </motion.h1>
+          </h1>
           {typeof description === 'string'
             ? (
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 1,
-                  delay: 1.2,
-                  type: 'tween'
-                }}
+              <p
                 className='f-heading-3 text-balance mt-spacing-4'
               >
                 {description}
-              </motion.p>
+              </p>
               )
             : description && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 1,
-                  delay: 1.2,
-                  type: 'tween'
-                }}
+              <div
                 className='mt-spacing-4 space-y-spacing-3'
               >
                 {description.map((paragraph, key) => (
@@ -58,16 +35,9 @@ export default function Hero ({ title, description, link, videoSrc }: HeroProps)
                     {paragraph}
                   </p>
                 ))}
-              </motion.div>
+              </div>
             )}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 1,
-              delay: 1.5,
-              type: 'tween'
-            }}
+          <div
             className='mt-spacing-6'
           >
             <CallToAction
@@ -82,7 +52,7 @@ export default function Hero ({ title, description, link, videoSrc }: HeroProps)
                 <div className='w-full h-full bg-accent/10 rounded-full absolute inset-0 -z-10 m-auto transition-transform duration-500 scale-0 group-hover:scale-[4]' />
               </div>
             </CallToAction>
-          </motion.div>
+          </div>
         </div>
       </div>
       {videoSrc && (<BackgroundVideo src={videoSrc} />)}
