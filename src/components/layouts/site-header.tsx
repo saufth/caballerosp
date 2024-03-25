@@ -36,7 +36,7 @@ export default function SiteHeader () {
   return (
     <>
       <motion.header
-        initial={{ y: -100 }}
+        initial={{ y: 0 }}
         animate={{ y: visible || isMenuOpen ? 0 : -100 }}
         transition={{
           duration: 0.5,
