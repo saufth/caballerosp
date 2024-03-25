@@ -230,7 +230,7 @@
   }
 
   .screen-container {
-    @apply w-full h-[100lvh] min-h-[500xp] lg:min-h-[600px] max-h-[1000px];
+    @apply w-full h-[100svh] min-h-[500xp] lg:min-h-[600px] max-h-[1000px];
   }
 }
 
