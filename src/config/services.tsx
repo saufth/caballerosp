@@ -36,7 +36,7 @@ export const services: Category[] = [
     items: [
       {
         title: 'Mantenimiento eléctrico predictivo',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit..ipsum et, consequat nunc.',
+        description: 'Detectamos fallas antes de que sucedan, analizamos cada parámetro y determinamos las causas.',
         image: {
           src: '/images/maintenance-predictive-service.webp',
           alt: 'Trabajador revisando una planta de energía eléctrica',
@@ -69,40 +69,7 @@ export const services: Category[] = [
       },
       {
         title: 'Mantenimiento eléctrico preventivo',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat.',
-        image: {
-          src: '/images/maintenance-preventive-service.webp',
-          alt: 'Trabajador revisando una planta de energía eléctrica',
-          width: 1280,
-          height: 720
-        },
-        items: [
-          {
-            title: 'Mantenimiento a plantas de energía'
-          },
-          {
-            title: 'Mantenimiento a subestaciones'
-          },
-          {
-            title: 'Prueba a transformadores de potencia'
-          },
-          {
-            title: 'Prueba a transformadores'
-          },
-          {
-            title: 'Prueba a relevadores'
-          },
-          {
-            title: 'Medición de tierras'
-          },
-          {
-            title: 'Poliza de servicios'
-          }
-        ]
-      },
-      {
-        title: 'Mantenimiento eléctrico correctivo',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat.',
+        description: 'Solucionamos cualquir anomalía antes de que se convierta en un problema mayor.',
         image: {
           src: '/images/maintenance-corrective-service.webp',
           alt: 'Trabajador revisando una planta de energía eléctrica',
