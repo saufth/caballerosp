@@ -16,7 +16,7 @@ export default function ContactPage () {
         <div className='container'>
           <h1 className='f-display-3 text-balanced'>
             <span className='text-gradient'>
-              Pongamonos en contacto
+              Pongámonos en contacto
             </span>
           </h1>
           <div className='cols-container mt-spacing-6'>
