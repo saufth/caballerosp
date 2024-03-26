@@ -243,11 +243,11 @@ export const filosophy: Section = {
   items: [
     {
       title: 'Nuestra visión',
-      description: 'Es posicionarnos como la mejor empresa de nuestro ramo a nivel regional, una de las mejores a nivel nacional y trascender fronteras para llegar a otros países.'
+      description: 'Proveer soluciones eléctricas que garanticen la calidad en energía para la industria, con innovación, talento y experiencia, viviendo una cultura genuinamente humana.'
     },
     {
       title: 'Nuestra misión',
-      description: '¡Ser felices!'
+      description: 'Ser una empresa de éxito con un modelo replicable cuya principal fortaleza sea su gente.'
     }
   ]
 }
