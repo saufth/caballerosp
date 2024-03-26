@@ -27,7 +27,7 @@ export default function MaintenancePage () {
             <div className='w-6-cols sm:w-1/2-cols'>
               <div className='relative'>
                 <Icons.Maintenance className='w-4/5 sm:w-full lg:w-4/5 h-auto mx-auto lg:mx-0 fill-transparent stroke-accent stroke-[4px] relative' />
-                <Icons.Maintenance className='w-4/5 sm:w-full lg:w-4/5 h-auto fill-transparent stroke-accent stroke-[4px] absolute inset-x-0 top-0 mx-auto lg:mx-0 scale-110 blur group-hover:scale-[1.15] duration-300 transition-transform' />
+                <Icons.Maintenance className='w-4/5 sm:w-full lg:w-4/5 h-auto fill-transparent stroke-accent stroke-[4px] absolute inset-x-0 top-0 mx-auto lg:mx-0 scale-110 blur' />
               </div>
             </div>
           </div>
