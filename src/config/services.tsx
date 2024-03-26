@@ -7,7 +7,7 @@ export const services: Category[] = [
     slug: '/instalaciones-electricas',
     image: {
       src: '/images/instalations-service.webp',
-      alt: 'Trabajador sobre una torre de alta tensión',
+      alt: 'Experto en sistemas eléctricos instalando una antena de alta tensión',
       width: 1280,
       height: 720
     },
@@ -39,7 +39,7 @@ export const services: Category[] = [
         description: 'Detectamos fallas antes de que sucedan, analizamos cada parámetro y determinamos las causas.',
         image: {
           src: '/images/maintenance-predictive-service.webp',
-          alt: 'Trabajador revisando una planta de energía eléctrica',
+          alt: 'Expertos en sistemas eléctricos revisando un transformador de potencia',
           width: 1280,
           height: 720
         },
@@ -69,12 +69,45 @@ export const services: Category[] = [
       },
       {
         title: 'Mantenimiento eléctrico preventivo',
-        description: 'Solucionamos cualquir anomalía antes de que se convierta en un problema mayor.',
+        description: 'Solucionamos cualquier anomalía antes de que se convierta en un problema mayor.',
+        image: {
+          src: '/images/maintenance-preventive-service.webp',
+          alt: 'Profecionales en sistemas eléctricossobre una torre de alta tensión revisando posibles fallas',
+          width: 1920,
+          height: 1080
+        },
+        items: [
+          {
+            title: 'Mantenimiento a plantas de energía'
+          },
+          {
+            title: 'Mantenimiento a subestaciones'
+          },
+          {
+            title: 'Prueba a transformadores de potencia'
+          },
+          {
+            title: 'Prueba a transformadores'
+          },
+          {
+            title: 'Prueba a relevadores'
+          },
+          {
+            title: 'Medición de tierras'
+          },
+          {
+            title: 'Poliza de servicios'
+          }
+        ]
+      },
+      {
+        title: 'Mantenimiento eléctrico correctivo',
+        description: 'Restauramos cualquier falla en tu infraestructura eléctrica. Solucionamos problemas de raíz.',
         image: {
           src: '/images/maintenance-corrective-service.webp',
-          alt: 'Trabajador revisando una planta de energía eléctrica',
-          width: 1280,
-          height: 720
+          alt: 'Expertos en sistemas eléctricos con equipo de seguridad dando mantenimiento a una torre de alta tensión',
+          width: 1920,
+          height: 1080
         },
         items: [
           {
@@ -93,7 +126,7 @@ export const services: Category[] = [
             title: 'Inspección interna'
           },
           {
-            title: 'Emergencias'
+            title: 'Emergencias eléctricas 24/7'
           }
         ]
       }
@@ -105,7 +138,7 @@ export const services: Category[] = [
     slug: '/diseno-ingenieria-electrica',
     image: {
       src: '/images/design-engineering-service.webp',
-      alt: 'Trabajador revisando una planta de energía eléctrica al aire libre',
+      alt: 'Ingeniero eléctrico desarrollando un proyecto de instalación eléctrica',
       width: 1920,
       height: 1080
     },
