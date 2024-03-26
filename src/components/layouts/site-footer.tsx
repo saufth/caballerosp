@@ -1,5 +1,6 @@
 import Menu from '@/components/layouts/menu'
 import { siteConfig } from '@/config/site'
+import { Link } from '../ui/link'
 
 export default function SiteFooter () {
   return (
@@ -12,8 +13,10 @@ export default function SiteFooter () {
           <div className='text-muted-foreground text-lg lg:text-xl font-medium order-2 sm:order-1'>
             {`${siteConfig.name} © ${new Date().getFullYear()}`}
           </div>
-          <div className='text-muted-foreground text-lg lg:text-xl font-medium order-1 sm:order-2'>
-            Política de privacidad
+          <div className='order-1 sm:order-2'>
+            <Link href='/privacidad' variant='muted' className='text-lg lg:text-xl font-medium'>
+              Política de privacidad
+            </Link>
           </div>
         </div>
       </div>
