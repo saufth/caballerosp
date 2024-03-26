@@ -1,13 +1,18 @@
 import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
 import { services } from '@/config/services'
-import { type SiteConfig, type MainNavItem, type NavItem, NavItemWithChildren } from '@/types'
+import {
+  type SiteConfig,
+  type MainNavItem,
+  type NavItem,
+  type NavItemWithChildren
+} from '@/types'
 
 export const author: Author = {
   name: 'saufth',
   url: 'https://github.com/saufth'
 }
 
-export const socialMedia: NavItem[] = [
+export const socialNav: NavItem[] = [
   {
     title: 'facebook',
     href: 'https://fb.com/CaballeroSolutions'
@@ -36,10 +41,14 @@ export const siteNav: MainNavItem[] = [
   }
 ]
 
+export const domain = 'caballerosolutions.com'
+
+export const contactEmail = `contacto@${domain}`
+
 export const siteConfig: SiteConfig = {
   name: 'Caballero Solutions Power',
   description: 'Baja la tensión. Déjanos la alta.',
-  url: `https://${process.env.NEXT_PUBLIC_DOMAIN}`,
+  url: `https://${domain}`,
   author,
   mainNav: [
     {

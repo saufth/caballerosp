@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { Link } from '@/components/ui/link'
-import { siteConfig } from '@/config/site'
-import { address, contactEmail } from '@/config/organization'
+import { address } from '@/config/organization'
+import { siteConfig, contactEmail } from '@/config/site'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
