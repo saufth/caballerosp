@@ -20,10 +20,10 @@ export const metadata: Metadata = {
 }
 
 const cultureIcons = [
-  Icons.Loyalty,
+  Icons.Teammate,
   Icons.Freedom,
+  Icons.Loyalty,
   Icons.Feith,
-  Icons.Appreciation,
   Icons.Excelence
 ]
 
@@ -110,6 +110,7 @@ export default function AboutPage () {
                       </p>
                     </CardHeader>
                   </div>
+                  <span className='absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-accent/0 via-accent/70 to-accent/0 transition-opacity duration-500 group-hover:opacity-60' />
                 </Card>
               )
             })}

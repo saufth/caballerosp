@@ -16,7 +16,7 @@ export default function PrivacyPage () {
     <>
       <section>
         <div className='container py-spacing-7'>
-          <h1 className='f-display-2 font-medium py-spacing-7 text-center'>
+          <h1 className='f-display-2 font-medium pb-spacing-7 text-center'>
             Política de privacidad
           </h1>
           <div className='[&_h2]:f-heading-2 [&_h2]:mt-spacing-7 [&_h2]:pb-spacing-4 [&_p]:f-subhead-2 [&_p]:text-muted-foreground [&_p]:text-balance [&_p]:mt-spacing-4'>

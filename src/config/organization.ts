@@ -257,24 +257,24 @@ export const culture: Section = {
   description: 'Nuestros servicios se sustentan con nuestros valores. Garantizamos excelencia en cada detalle.',
   items: [
     {
-      title: 'Lealtad',
-      description: 'Respeto y fidelidad a los compromisos que hacemos con nosotros mismos y con todos los que nos rodean: familia, amigos, compañeros, clientes, proveedores, hablando siempre con verdad y aceptando cuando nos equivocamos.'
+      title: 'Compañerismo',
+      description: 'Te acompaño, te cuido y cumplo siempre con lo mío.'
     },
     {
       title: 'Libertad',
-      description: 'Pensar y actuar bajo criterio propio, pero de manera responsable y enfocada a buscar nuestra felicidad'
+      description: 'Puedo ser y actuar a voluntad, pero siempre con responsabilidad'
+    },
+    {
+      title: 'Lealtad',
+      description: 'Actúo siempre de buena fe, siempre fiel a la verdad, a mis valores y principios.'
     },
     {
       title: 'Fe',
-      description: 'Tenemos la firme convicción de que Dios tiene un especial aprecio por nuestra empresa y nuestra gente.'
+      description: 'Creo y confío, siempre firme y convencido.'
     },
     {
-      title: 'Aprecio',
-      description: 'Más que una organización, somos una familia, que respeta y entiende la personalidad de cada integrante, reconociendo sus virtudes y logros.'
-    },
-    {
-      title: 'Excelencia',
-      description: 'Alcanzar el máximo nivel posible en todo lo que hacemos, tanto en el ámbito personal como profesional, bajo la premisa de que siempre es posible mejorar.'
+      title: 'Perfección',
+      description: 'Busco siempre el máximo nivel posible.'
     }
   ]
 }

@@ -455,7 +455,7 @@ export const Icons = {
       </svg>
     )
   },
-  Appreciation: (props: IconProps) => {
+  Loyalty: (props: IconProps) => {
     return (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -576,7 +576,7 @@ export const Icons = {
       </svg>
     )
   },
-  Loyalty: (props: IconProps) => {
+  Teammate: (props: IconProps) => {
     return (
       <svg
         xmlns='http://www.w3.org/2000/svg'
