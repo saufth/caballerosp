@@ -114,7 +114,7 @@ export default function IndexPage () {
           <div className='cols-container'>
             <div className='w-8-cols md:w-4-cols lg:w-6-cols md:order-2'>
               <h2 className='f-subhead-2 font-medium text-muted-foreground'>
-                Emergencias
+                Emergencias eléctricas
               </h2>
               <p className='f-display-3 mt-spacing-4 text-balance'>
                 Atendemos tus necesidades más urgentes, no importa el día ni la hora.
