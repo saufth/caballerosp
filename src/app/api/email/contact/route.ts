@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
 import { z } from 'zod'
 import { contactEmailSchema } from '@/lib/validations/email'
-import { siteConfig, contactEmail, domain } from '@/config/site'
+import { siteConfig, contactEmail } from '@/config/site'
 
 export async function POST (req: Request) {
   const input = contactEmailSchema.parse(await req.json())
@@ -12,7 +12,7 @@ export async function POST (req: Request) {
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: `noreply@${domain}`,
+        user: 'dev.caballerosp@gmail.com',
         pass: String(process.env.GAPP)
       }
     })
@@ -24,6 +24,9 @@ export async function POST (req: Request) {
       html: `
         <h1><b>¡Gracias por contactarnos!</b></h1>
         <p>Un miembro de nuestro equipo se comunicará con usted en breve.</p>
+        <br />
+        <p>Porfavor, no contestar a este correo electrónico, si quiere dejarnos un mensaje, escribir a:</p>
+        <a href="mailto:${contactEmail}">${contactEmail}</a>
       `
     })
 

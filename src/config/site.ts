@@ -41,9 +41,9 @@ export const siteNav: MainNavItem[] = [
   }
 ]
 
-export const domain = 'caballerosolutions.com'
+export const domain = 'caballerosolutionspower.com'
 
-export const contactEmail = `contacto@${domain}`
+export const contactEmail = `mkt@${domain}`
 
 export const siteConfig: SiteConfig = {
   name: 'Caballero Solutions Power',
