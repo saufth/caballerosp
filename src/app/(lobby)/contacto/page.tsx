@@ -28,8 +28,8 @@ export default function ContactPage () {
                 <Image
                   src='/images/contact-hero.webp'
                   alt='Dos hombres de negocios discutiendo en una oficina moderna'
-                  width={1080}
-                  height={810}
+                  width={3200}
+                  height={2400}
                   sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                   loading='lazy'
                   className='w-full rounded-xl'
