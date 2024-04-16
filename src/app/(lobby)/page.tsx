@@ -28,8 +28,8 @@ export default function IndexPage () {
         title={siteConfig.description}
         description='Desde instalaciones en baja tensión hasta proyectos en alta tensión, nuestro equipo altamente capacitado y comprometido se encarga de cada detalle.'
         link={{
-          title: 'Soluciones',
-          href: '/#soluciones'
+          title: 'Ponte en contacto',
+          href: '/contacto'
         }}
         videoSrc='/video/home-hero.mp4'
       />
