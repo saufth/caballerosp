@@ -19,7 +19,7 @@ const callToActionVariants = cva(
         default: 'h-9 md:h-10',
         xs: 'h-6 md:h-7',
         sm: 'h-7 md:h-8',
-        lg: 'h-11 md:h-14',
+        lg: 'h-12 md:h-14',
         icon: 'h-7 lg:h-[33px] w-7 lg:w-[33px]'
       }
     },

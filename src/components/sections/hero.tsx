@@ -44,7 +44,7 @@ export default function Hero ({ title, description, link, videoSrc }: HeroProps)
               href={link.href}
               size='lg'
               className='group overflow-hidden'
-              contentClassName='flex gap-x-spacing-4'
+              contentClassName='flex gap-x-spacing-4 md:text-lg'
             >
               {link.title}
               <div className='w-7 md:w-8 h-7 md:h-8 bg-accent rounded-full grid place-content-center relative z-20'>
